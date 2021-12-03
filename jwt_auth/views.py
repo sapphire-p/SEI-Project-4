@@ -1,3 +1,4 @@
+from plants.models import Plant  # ? imports Plant model from plants app
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,10 +7,11 @@ from datetime import datetime, timedelta
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
-from .serializers import UserSerializer
+from .serializers import UserSerializer, NonRegistrationUserSerializer
 User = get_user_model()
 
 
+# ? For requests made to /users/register/
 class RegisterView(APIView):
 
     # this register view takes the data sent in via the request body, passes it through the UserSerializer and creates a new user with it, or otherwise throws a 422 error
@@ -22,6 +24,7 @@ class RegisterView(APIView):
         return Response(user_to_create.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
 
+# ? For requests made to /users/login/
 class LoginView(APIView):
 
     # this login view finds the user by username in the db (in models.py, specified that username mst be unique=True)
@@ -50,19 +53,62 @@ class LoginView(APIView):
         return Response({'token': token, 'message': f'Welcome back {user_to_login.username}!'})
 
 
-# class UserListView(APIView):
+# ? For requests made to /users/
+class UserListView(APIView):
 
-#     def get(self, request):
-#         users = User.objects.all()
+    def get(self, request):
+        users = User.objects.all()
+        serialized_users = NonRegistrationUserSerializer(users, many=True)
+        return Response(serialized_users.data, status=status.HTTP_200_OK)
 
 
-# user detail view
+# ? For requests made to /users/pk/
+class UserDetailView(APIView):
 
-# PUT request (self, request, pk (of plant)) - pk of the plant is taken from the url endpoint like params
+    def get(self, request, pk):
+        try:
+            user = User.objects.get(id=pk)
+        except:
+            return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        serialized_user = NonRegistrationUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+    # this updates the must_have_plants field associated with the user (Many-To-Many relationship between Users and Plants):
+    # the user's pk (id) is taken from the URL endpoint the request is made to
+    # the plant's pk (id) is taken from the JSON request body, which must contain a "plant_id" field, e.g. "plant_id": 1
+    def put(self, request, pk):
+        plant_id = request.data.get('plant_id')
+        try:
+            user = User.objects.get(id=pk)
+        except:
+            return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        try:
+            plant = Plant.objects.get(id=plant_id)
+        except:
+            return Response({'message': 'Plant not found'}, status=status.HTTP_404_NOT_FOUND)
+        user.must_have_plants.add(plant)
+        user.save()
+        serialized_user = NonRegistrationUserSerializer(user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
+
+    def delete(self, request, pk):
+        try:
+            user = User.objects.get(id=pk)
+        except:
+            return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+        try:
+            user.delete()
+        except:
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+# in user detail view:
+
+# PUT request (self, request, pk (of user)) - pk of the user is taken from the url endpoint like params, JSON request body contains field e.g. "plant_id": "1"
+# plant = Plant.object.get(id=plant_id) #? Django ORM method to look up plant object by id
+# user = User.objects.get(id=pk) #? Django ORM method to look up user by id
+
 # Django many-to-many ORM command
-# plant = plant.object.get() #? Django ORM method to look up plant object by id
-# user = user.object.get() #?
-
 # ? Django ORM method to update the many-to-many association, i.e. add to the junction table between Users and Plants in the db
 # ? see: https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_many/
 # user.plants.add(plant)
