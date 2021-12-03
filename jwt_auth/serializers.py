@@ -42,9 +42,9 @@ class UserSerializer(serializers.ModelSerializer):
             'username', 'email', 'password', 'password_confirmation',
             'profile_image', 'three_word_bio', 'about_me'
         )
-        # fields = ('username', 'email', 'password', 'password_confirmation',)
 
 
+# this serializer is used for user-related requests that are NOT to do with Registering a new user (e.g. GET all users, GET single user, etc.)
 class NonRegistrationUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

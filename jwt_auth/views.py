@@ -55,7 +55,6 @@ class LoginView(APIView):
 
 # ? For requests made to /users/
 class UserListView(APIView):
-
     def get(self, request):
         users = User.objects.all()
         serialized_users = NonRegistrationUserSerializer(users, many=True)
@@ -102,7 +101,7 @@ class UserDetailView(APIView):
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-# in user detail view:
+# this has now been implemented in user detail view:
 
 # PUT request (self, request, pk (of user)) - pk of the user is taken from the url endpoint like params, JSON request body contains field e.g. "plant_id": "1"
 # plant = Plant.object.get(id=plant_id) #? Django ORM method to look up plant object by id

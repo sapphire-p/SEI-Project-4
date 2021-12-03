@@ -11,7 +11,7 @@ class Plant(models.Model):
         max_digits=3, decimal_places=0, default=None)
     light_level = models.CharField(max_length=100, default=None)
     watering_frequency = models.CharField(max_length=100, default=None)
-    price = models.DecimalField(
+    price_in_GBP = models.DecimalField(
         max_digits=10, decimal_places=2, default=None)
 
     def __str__(self):
