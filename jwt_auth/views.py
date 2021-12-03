@@ -48,3 +48,22 @@ class LoginView(APIView):
         )
         # if the user is successfully logged in, the JWT token and a welcome message is sent back in the response to front end:
         return Response({'token': token, 'message': f'Welcome back {user_to_login.username}!'})
+
+
+# class UserListView(APIView):
+
+#     def get(self, request):
+#         users = User.objects.all()
+
+
+# user detail view
+
+# PUT request (self, request, pk (of plant)) - pk of the plant is taken from the url endpoint like params
+# Django many-to-many ORM command
+# plant = plant.object.get() #? Django ORM method to look up plant object by id
+# user = user.object.get() #?
+
+# ? Django ORM method to update the many-to-many association, i.e. add to the junction table between Users and Plants in the db
+# ? see: https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_many/
+# user.plants.add(plant)
+# user.save()

@@ -35,7 +35,17 @@ class UserSerializer(serializers.ModelSerializer):
         data['password'] = make_password(password)
         return data
 
-    # specifies to serilaizer to only include the specified fields (we do not need to use all of the extra default fields that exist in Django’s User table in our frontend):
+    # specifies to serializer to only include the specified fields (we do not need to use all of the extra default fields that exist in Django’s User table in our frontend):
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'password_confirmation',)
+        fields = (
+            'username', 'email', 'password', 'password_confirmation',
+            'profile_image', 'three_word_bio', 'about_me'
+        )
+        # fields = ('username', 'email', 'password', 'password_confirmation',)
+
+
+# class NonRegistrationUserSerializer():
+
+# class nonREgistrationUserSerializer
+# separate serializer that includes all fields - add all fields to the non-registration serializer
