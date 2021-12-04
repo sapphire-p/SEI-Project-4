@@ -44,7 +44,7 @@ class PlantDetailView(APIView):
             plant = Plant.objects.get(id=pk)
         except:
             return Response({'message': 'Plant not found'}, status=status.HTTP_404_NOT_FOUND)
-        updated_plant = PlantSerializer(plant, data=request.data)
+        updated_plant = PopulatedPlantSerializer(plant, data=request.data)
         if updated_plant.is_valid():
             updated_plant.save()
             return Response(updated_plant.data, status=status.HTTP_202_ACCEPTED)

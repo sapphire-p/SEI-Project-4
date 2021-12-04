@@ -14,7 +14,7 @@ class Review(models.Model):
             MinValueValidator(0)
         ]
     )
-    comment = models.TextField(max_length=1000)
+    comment = models.TextField(max_length=1000, default="")
     plant = models.ForeignKey("plants.Plant", on_delete=models.CASCADE)
     user = models.ForeignKey(
         "jwt_auth.User", on_delete=models.CASCADE)  # ? is this correct? Alex says maybe, or may have to put User instead of "jwt_auth.User".

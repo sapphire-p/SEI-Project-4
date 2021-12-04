@@ -13,4 +13,4 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 # class PopulatedReviewSerializer(ReviewSerializer):
-#     owner = NonRegistrationUserSerializer(many=True)
+#     user = NonRegistrationUserSerializer(many=True)
