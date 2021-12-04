@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Plant
-from .serializers import PlantSerializer
+from .serializers import PlantSerializer, PopulatedPlantSerializer
 
 # from rest_framework.exceptions import PermissionDenied
 # from datetime import datetime, timedelta
@@ -16,7 +16,7 @@ from .serializers import PlantSerializer
 class PlantListView(APIView):
     def get(self, request):
         plants = Plant.objects.all()
-        serialized_plants = PlantSerializer(plants, many=True)
+        serialized_plants = PopulatedPlantSerializer(plants, many=True)
         return Response(serialized_plants.data, status=status.HTTP_200_OK)
 
     def post(self, request):
@@ -36,7 +36,7 @@ class PlantDetailView(APIView):
             plant = Plant.objects.get(id=pk)
         except:
             return Response({'message': 'Plant not found'}, status=status.HTTP_404_NOT_FOUND)
-        serialized_plant = PlantSerializer(plant)
+        serialized_plant = PopulatedPlantSerializer(plant)
         return Response(serialized_plant.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
