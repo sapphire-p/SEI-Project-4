@@ -3,7 +3,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
-User = get_user_model()  # ? do I need to import this? Maybe not?
+# User = get_user_model()  # ? do I need to import this? I think not, the below seems to work.
 
 
 class Review(models.Model):

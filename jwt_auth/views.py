@@ -85,6 +85,7 @@ class UserDetailView(APIView):
             plant = Plant.objects.get(id=plant_id)
         except:
             return Response({'message': 'Plant not found'}, status=status.HTTP_404_NOT_FOUND)
+        # Django ORM commands to create an association between this user and this plant in the Many-To-Many junction table:
         user.must_have_plants.add(plant)
         user.save()
         serialized_user = NonRegistrationUserSerializer(user)

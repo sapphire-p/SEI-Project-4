@@ -51,7 +51,3 @@ class NonRegistrationUserSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'username', 'email', 'profile_image', 'three_word_bio', 'about_me', 'must_have_plants'
         )
-
-
-# class nonREgistrationUserSerializer
-# separate serializer that includes all fields - add all fields to the non-registration serializer
