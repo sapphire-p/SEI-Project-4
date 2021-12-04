@@ -37,6 +37,14 @@ class ReviewDetailView(APIView):
         else:
             return Response(updated_review.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
+    def delete(self, request, pk):
+        try:
+            review = Review.objects.get(id=pk)
+            review.delete()
+        except:
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
 
 # ? There is not a use case for GETting and returning a single review using its id number
     # def get(self, request, pk):
