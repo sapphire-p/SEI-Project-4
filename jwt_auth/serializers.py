@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 import django.contrib.auth.password_validation as validations
 from django.contrib.auth.hashers import make_password
 from django.core.exceptions import ValidationError
+
+from plants.serializers import PopulatedPlantSerializer
 User = get_user_model()
 
 
@@ -48,6 +50,11 @@ class UserSerializer(serializers.ModelSerializer):
 class NonRegistrationUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
+        # fields = '__all__'
         fields = (
             'id', 'username', 'email', 'profile_image', 'three_word_bio', 'about_me', 'must_have_plants'
         )
+
+
+class PopulatedNonRegistrationUserSerializer(NonRegistrationUserSerializer):
+    must_have_plants = PopulatedPlantSerializer(many=True)

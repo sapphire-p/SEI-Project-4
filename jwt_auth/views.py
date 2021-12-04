@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from django.contrib.auth import get_user_model
 from django.conf import settings
 import jwt
-from .serializers import UserSerializer, NonRegistrationUserSerializer
+from .serializers import UserSerializer, NonRegistrationUserSerializer, PopulatedNonRegistrationUserSerializer
 User = get_user_model()
 
 
@@ -57,7 +57,8 @@ class LoginView(APIView):
 class UserListView(APIView):
     def get(self, request):
         users = User.objects.all()
-        serialized_users = NonRegistrationUserSerializer(users, many=True)
+        serialized_users = NonRegistrationUserSerializer(
+            users, many=True)
         return Response(serialized_users.data, status=status.HTTP_200_OK)
 
 
@@ -69,7 +70,7 @@ class UserDetailView(APIView):
             user = User.objects.get(id=pk)
         except:
             return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
-        serialized_user = NonRegistrationUserSerializer(user)
+        serialized_user = PopulatedNonRegistrationUserSerializer(user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
     # this updates the must_have_plants field associated with the user (Many-To-Many relationship between Users and Plants):
@@ -88,7 +89,7 @@ class UserDetailView(APIView):
         # Django ORM commands to create an association between this user and this plant in the Many-To-Many junction table:
         user.must_have_plants.add(plant)
         user.save()
-        serialized_user = NonRegistrationUserSerializer(user)
+        serialized_user = PopulatedNonRegistrationUserSerializer(user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
     def delete(self, request, pk):
