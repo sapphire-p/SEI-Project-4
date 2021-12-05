@@ -1,16 +1,40 @@
 import React from 'react'
-import axios from 'axios'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
+import Home from './components/Home'
 
-function App() {
-  React.useEffect(() => {
-    const getData = async () => {
-      const res = await axios.get('/api/plants') // * <-- replace with your endpoint
-      console.log(res.data)
-    }
-    getData()
-  })
 
-  return <h1>Hello World</h1>
+// import axios from 'axios'
+
+
+const App = () => {
+
+  return (
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+      </Switch>
+    </BrowserRouter>
+  )
+
 }
 
 export default App
+
+
+
+// ? What was originally in this file in the create-react-app template:
+// function App() {
+//   React.useEffect(() => {
+//     const getData = async () => {
+//       const res = await axios.get('/api/plants') // * <-- replace with your endpoint
+//       console.log(res.data)
+//     }
+//     getData()
+//   })
+
+//   return <h1>Hello World</h1>
+// }
+
+// export default App
