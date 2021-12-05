@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from plants.models import Plant  # ? imports Plant model from plants app
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -64,6 +65,7 @@ class UserListView(APIView):
 
 # ? For requests made to /users/pk/
 class UserDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def get(self, request, pk):
         try:

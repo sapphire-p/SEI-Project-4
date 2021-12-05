@@ -4,10 +4,13 @@ from rest_framework import status
 from .models import Review
 from .serializers import ReviewSerializer
 # PopulatedReviewSerializer
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 # ? For requests made to /reviews/
 class ReviewListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
     def get(self, request):
         reviews = Review.objects.all()
         serialized_reviews = ReviewSerializer(reviews, many=True)
@@ -16,7 +19,9 @@ class ReviewListView(APIView):
     def post(self, request):
         review = ReviewSerializer(data=request.data)
         if review.is_valid():
-            review.save()
+            # The line below was previously review.save() but this way the pk id of the user that is logged in when posting the review
+            # will automatically be added as the value of the review_owner field in the review
+            review.save(review_owner=request.user)
             return Response(review.data, status=status.HTTP_201_CREATED)
         else:
             return Response(review.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
@@ -24,6 +29,7 @@ class ReviewListView(APIView):
 
 # ? For requests made to /reviews/pk/
 class ReviewDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
 
     def put(self, request, pk):
         try:
