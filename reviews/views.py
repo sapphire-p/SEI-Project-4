@@ -16,7 +16,7 @@ class ReviewListView(APIView):
         return Response(serialized_reviews.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        review = ReviewSerializer(data=request.data)
+        review = PopulatedReviewSerializer(data=request.data)
         if review.is_valid():
             # The line below was previously review.save() but this way the pk id of the user that is logged in when posting the review
             # will automatically be added as the value of the review_owner field in the review

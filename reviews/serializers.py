@@ -2,8 +2,8 @@ from rest_framework import serializers
 from .models import Review
 from jwt_auth.serializers2 import UsernameOnlyUserSerializer
 
-# from jwt_auth.serializers import UserSerializer
-# from jwt_auth.serializers import NonRegistrationUserSerializer
+# ! from jwt_auth.serializers import UserSerializer
+# ! from jwt_auth.serializers import NonRegistrationUserSerializer
 # ! from jwt_auth.models import User
 
 
