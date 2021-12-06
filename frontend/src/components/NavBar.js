@@ -21,7 +21,7 @@ const NavBar = () => {
     password_confirmation: '',
     profile_image: '',
     three_word_bio: '',
-    // about_me: '',
+    about_me: '',
   })
 
   const handleChange = (event) => {
@@ -107,6 +107,7 @@ const NavBar = () => {
           </Form>
 
         </Modal.Body>
+
         <Modal.Footer>
           <Button variant='secondary' onClick={handleClose}>
             Close
