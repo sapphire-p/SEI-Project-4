@@ -16,8 +16,8 @@ const Register = () => {
     email: '',
     password: '',
     password_confirmation: '',
-    profile_image: '',
-    three_word_bio: '',
+    profile_image: 'https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,h_300,r_max,w_300/v1638451738/The-Potting-Shed/robin-mathlener-8x3wjKJL_yE-unsplash_edit_eadnep.jpg',
+    three_word_bio: 'Hi there everyone!',
     about_me: '',
   })
 
