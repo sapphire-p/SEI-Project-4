@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Plant
 
-from reviews.serializers import ReviewSerializer
+from reviews.serializers import PopulatedReviewSerializer
 
 
 class PlantSerializer(serializers.ModelSerializer):
@@ -11,4 +11,4 @@ class PlantSerializer(serializers.ModelSerializer):
 
 
 class PopulatedPlantSerializer(PlantSerializer):
-    review_set = ReviewSerializer(read_only=True, many=True)
+    review_set = PopulatedReviewSerializer(read_only=True, many=True)
