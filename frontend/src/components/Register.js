@@ -26,6 +26,10 @@ const Register = () => {
     setFormData(newFormData)
   }
 
+  const handleImageUrl = (url) => {
+    setFormData({ ...formData, profile_image: url })
+  }
+
   console.log(formData)
 
   return (
@@ -76,6 +80,7 @@ const Register = () => {
             <ImageUploadField
               value={formData.profile_image}
               name='profile_image'
+              handleImageUrl={handleImageUrl}
             />
           </Form.Group>
 
