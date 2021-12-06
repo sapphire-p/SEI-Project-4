@@ -48,7 +48,7 @@ const PlantShow = () => {
                   <Image src={plant.image} alt={plant.name} rounded fluid />
                 </Col>
                 <Col md={7} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h2 className="text-center mt-3 mb-4">{plant.name}</h2>
+                  <h2 className='text-center mt-3 mb-4'>{plant.name}</h2>
                   <div className='px-4'>
                     <p>{plant.description}</p>
                     <p>Height (cm): {plant.height_in_cm}</p>
@@ -85,7 +85,7 @@ const PlantShow = () => {
                 </>
                 :
                 <Col className='p-4'>
-                  <div>Loading... / Error</div>
+                  <div className='text-center'>There are no reviews available for this plant.</div>
                 </Col>
               }
             </Container >
