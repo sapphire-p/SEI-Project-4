@@ -61,24 +61,33 @@ const PlantShow = () => {
             </Container>
             <Container>
               <h2 className="text-center">Reviews</h2>
-              <Row>
-                {reviews.length > 0 ?
-                  <Col className='p-4'>
-                    {reviews.map(review => {
-                      return (
-                        <div key={review.id}>
-                          <h3>{review.review_owner.username}</h3>
-                          <p>Rating: {review.rating}/5</p>
-                        </div>
-                      )
-                    })}
-                  </Col>
-                  :
-                  <Col className='p-4'>
-                    <div>Loading... / Error</div>
-                  </Col>
-                }
-              </Row>
+              {reviews.length > 0 ?
+                <>
+                  {reviews.map(review => {
+                    return (
+                      <div key={review.id}>
+                        <Row>
+                          <Col>
+                            <p>{review.review_owner.username}</p>
+                          </Col>
+                          <Col>
+                            <p>Rating: {review.rating}/5</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col>
+                            <p>{review.comment}</p>
+                          </Col>
+                        </Row>
+                      </div>
+                    )
+                  })}
+                </>
+                :
+                <Col className='p-4'>
+                  <div>Loading... / Error</div>
+                </Col>
+              }
             </Container >
           </>
           :
