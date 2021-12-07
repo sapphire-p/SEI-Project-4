@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-// import Jumbotron from 'react-bootstrap/Jumbotron'
-import Card from 'react-bootstrap/Card'
-// import CardColumns from 'react-bootstrap/CardColumns'
 import { Container } from 'react-bootstrap'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import PlantCard from './PlantCard'
 
 
 const Home = () => {
@@ -42,17 +39,7 @@ const Home = () => {
               {plants.map(plant => {
                 return (
                   <div key={plant.id}>
-                    <Card>
-                      <Link to={`/plants/${plant.id}`}>
-                        <Card.Img variant="top" src={plant.image} alt={plant.name} />
-                      </Link>
-                      <Card.Body>
-                        <Card.Title className="blue-title text-center">{plant.name}</Card.Title>
-                        <Card.Text className="text-center">
-                          £{plant.price_in_GBP}
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
+                    <PlantCard {...plant} />
                   </div>
                 )
               })}
@@ -89,3 +76,6 @@ export default Home
     )
   })}
 </Row> */
+
+
+// price={plant.price_in_GBP}

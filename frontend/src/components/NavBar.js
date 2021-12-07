@@ -27,7 +27,7 @@ const NavBar = () => {
     history.push('/') // redirect user to the home page
   }
 
-  console.log(getUserIdFromLocalStorage())
+  // console.log(getUserIdFromLocalStorage())
 
   return (
     <>
