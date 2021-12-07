@@ -52,7 +52,6 @@ const Register = () => {
     if (newFormData.about_me === '') {
       delete newFormData.about_me
     }
-    console.log(newFormData)
     try {
       await axios.post('/api/users/register/', newFormData)
       history.push('/login')
@@ -62,8 +61,8 @@ const Register = () => {
     }
   }
 
-  console.log(formData)
-  console.log(errors)
+  // console.log(formData)
+  // console.log(errors)
 
   return (
     <Container style={{ width: '80%', minWidth: '500px' }}>
