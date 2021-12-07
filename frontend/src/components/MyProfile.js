@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
+import PlantCard from './PlantCard'
 
 
 const MyProfile = () => {
@@ -34,7 +35,7 @@ const MyProfile = () => {
   return (
     <>
       {
-        user ?
+        user && mustHavePlants ?
           <>
             <Container className='my-4'>
               <Row>
@@ -52,6 +53,17 @@ const MyProfile = () => {
             </Container>
             <Container>
               <h2 className="text-center">My Must-Have Plants</h2>
+              <Container>
+                <div id="custom-card-columns" className="card-columns">
+                  {mustHavePlants.map(plant => {
+                    return (
+                      <div key={plant.id}>
+                        <PlantCard {...plant} />
+                      </div>
+                    )
+                  })}
+                </div>
+              </Container>
             </Container >
           </>
           :
