@@ -21,10 +21,12 @@ const Login = () => {
   const setTokenToLocalStorage = (token) => {
     window.localStorage.setItem('token', token)
   }
-  const setUsernameToLocalStorage = () => {
-    window.localStorage.setItem('username', formData.username)
+  const setUsernameToLocalStorage = (username) => {
+    window.localStorage.setItem('username', username)
   }
-
+  const setUserIdToLocalStorage = (userId) => {
+    window.localStorage.setItem('user_id', userId)
+  }
 
   const handleChange = (event) => {
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -37,6 +39,7 @@ const Login = () => {
       const { data } = await axios.post('/api/users/login/', formData)
       setTokenToLocalStorage(data.token)
       setUsernameToLocalStorage(formData.username)
+      setUserIdToLocalStorage(data.user_id)
       history.push('/')
     } catch (err) {
       setError(true)

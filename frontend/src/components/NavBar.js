@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
-import { getPayload, getUsernameFromLocalStorage } from './helpers/auth'
+import { getPayload, getUsernameFromLocalStorage, getUserIdFromLocalStorage } from './helpers/auth'
 import Navbar from 'react-bootstrap/Navbar'
 import { Nav } from 'react-bootstrap'
 
@@ -9,6 +9,7 @@ const NavBar = () => {
 
   const history = useHistory()
   const location = useLocation()
+
 
   useEffect(() => {
 
@@ -26,6 +27,7 @@ const NavBar = () => {
     history.push('/') // redirect user to the home page
   }
 
+  console.log(getUserIdFromLocalStorage())
 
   return (
     <>
@@ -41,7 +43,7 @@ const NavBar = () => {
               </Nav>
               <Nav className='ml-auto'>
                 <Nav.Link href='/community'>Community</Nav.Link>
-                <Nav.Link href='/myprofile'>MyProfile</Nav.Link>
+                <Nav.Link href={`/profile/${getUserIdFromLocalStorage()}`}>MyProfile</Nav.Link>
                 <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
               </Nav>
             </>

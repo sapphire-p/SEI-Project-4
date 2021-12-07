@@ -4,8 +4,10 @@ import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 
+// import Card from 'react-bootstrap/Card'
 
-const PlantShow = () => {
+
+const MyProfile = () => {
 
   const [plant, setPlant] = useState(null)
   const [reviews, setReviews] = useState(null)
@@ -27,8 +29,8 @@ const PlantShow = () => {
   }, [id])
 
 
-  // console.log(plant)
-  // console.log(reviews)
+  console.log(plant)
+  console.log(reviews)
 
 
   return (
@@ -92,23 +94,4 @@ const PlantShow = () => {
 
 }
 
-export default PlantShow
-
-
-
-{/* <Container>
-<h2 className="text-center">Reviews</h2>
-<Row>
-  <Col>
-    <Image src={plant.image} rounded fluid />
-  </Col>
-  <Col>
-    <h2 className="text-center">{plant.name}</h2>
-    <p>{plant.description}</p>
-    <p>Height (cm): {plant.height_in_cm}</p>
-    <p>Light level: {plant.light_level}</p>
-    <p>Watering: {plant.watering_frequency}</p>
-    <p>Price: £{plant.price_in_GBP}</p>
-  </Col>
-</Row>
-</Container > */}
+export default MyProfile

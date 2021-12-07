@@ -15,7 +15,6 @@ const Home = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/plants')
-        console.log(data)
         setPlants(data)
       } catch (err) {
         console.log(err)
@@ -24,7 +23,6 @@ const Home = () => {
     getData()
   }, [])
 
-  console.log(plants)
 
   return (
     <>
