@@ -22,8 +22,6 @@ const PlantShow = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/plants/${id}`)
-        console.log(data)
-        // console.log(data.review_set)
         setPlant(data)
         setReviews(data.review_set)
       } catch (err) {
@@ -47,6 +45,7 @@ const PlantShow = () => {
         { plant_id: id }, // id here refers to plant id, taken from the params
         { headers: { Authorization: `Bearer ${token}` } }
       )
+      setMustHavesButtonClicked(true)
     } catch (err) {
       setPutRequestErrors(true)
     }
@@ -55,10 +54,11 @@ const PlantShow = () => {
 
   // console.log('plant.id ->', plant.id)
   // console.log(reviews)
-  console.log('loggedInUserId ->', loggedInUserId)
-  console.log('token ->', token)
+  // console.log('loggedInUserId ->', loggedInUserId)
+  // console.log('token ->', token)
   console.log('getRequestErrors ->', getRequestErrors)
   console.log('putRequestErrors ->', putRequestErrors)
+  // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
 
 
   return (
@@ -80,9 +80,14 @@ const PlantShow = () => {
                     <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
                     <p>£{plant.price_in_GBP}</p>
                     <div className='d-flex justify-content-center'>
-                      <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
-                        Add to Must-Have Plants
-                      </Button>
+                      {!mustHavesButtonClicked ?
+                        <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                          Add to Must-Have Plants
+                        </Button>
+                        :
+                        <p className='font-weight-bold text-success'>Plant added to Must-Haves list!</p>
+                      }
+
                     </div>
                   </div>
                 </Col>

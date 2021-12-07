@@ -7,15 +7,17 @@ import Image from 'react-bootstrap/Image'
 
 const MyProfile = () => {
 
-  const [user, setUser] = useState(null)
   const { id } = useParams()
+  const [user, setUser] = useState(null)
+  const [mustHavePlants, setMustHavePlants] = useState(null)
+
 
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/users/${id}/`)
-        console.log(data)
         setUser(data)
+        setMustHavePlants(data.must_have_plants)
       } catch (err) {
         console.log(err)
       }
@@ -24,7 +26,8 @@ const MyProfile = () => {
   }, [id])
 
 
-  console.log(user)
+  // console.log(user)
+  console.log(mustHavePlants)
 
 
 
