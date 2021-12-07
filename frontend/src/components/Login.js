@@ -43,8 +43,6 @@ const Login = () => {
     }
   }
 
-  console.log(window.localStorage)
-
 
   return (
     <Container style={{ width: '50%', minWidth: '500px' }}>
