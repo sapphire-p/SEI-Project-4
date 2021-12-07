@@ -6,6 +6,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 import PlantShow from './components/PlantShow'
 import MyProfile from './components/MyProfile'
+import Community from './components/Community'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/plants/:id' component={PlantShow} />
         <Route exact path='/profile/:id' component={MyProfile} />
+        <Route exact path='/community' component={Community} />
       </Switch>
     </BrowserRouter>
   )
