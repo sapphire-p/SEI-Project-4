@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getUserIdFromLocalStorage, getTokenFromLocalStorage } from './helpers/auth'
+import { getPayload, getUserIdFromLocalStorage, getTokenFromLocalStorage } from './helpers/auth'
 import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
@@ -18,6 +18,14 @@ const PlantShow = () => {
   const [putRequestErrors, setPutRequestErrors] = useState(false)
   const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
 
+  const userIsAuthenticated = () => {
+    const payload = getPayload()
+    if (!payload) return false
+    const now = Math.round(Date.now() / 1000)
+    return now < payload.exp
+  }
+
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -31,6 +39,7 @@ const PlantShow = () => {
     }
     getData()
   }, [id])
+
 
   useEffect(() => {
     setLoggedInUserId(getUserIdFromLocalStorage())
@@ -50,6 +59,11 @@ const PlantShow = () => {
       setPutRequestErrors(true)
     }
   }
+
+  const handleNotLoggedInClickedMustHave = () => {
+    setMustHavesButtonClicked(true)
+  }
+
 
 
   // console.log('plant.id ->', plant.id)
@@ -80,14 +94,30 @@ const PlantShow = () => {
                     <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
                     <p>£{plant.price_in_GBP}</p>
                     <div className='d-flex justify-content-center'>
-                      {!mustHavesButtonClicked ?
-                        <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
-                          Add to Must-Have Plants
-                        </Button>
+                      {userIsAuthenticated() ?
+                        <>
+                          {!mustHavesButtonClicked ?
+                            <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                              Add to Must-Have Plants
+                            </Button>
+                            :
+                            <p className='font-weight-bold text-success'>Plant added to Must-Haves list!</p>
+                          }
+                        </>
                         :
-                        <p className='font-weight-bold text-success'>Plant added to Must-Haves list!</p>
+                        <>
+                          {!mustHavesButtonClicked ?
+                            <Button onClick={handleNotLoggedInClickedMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                              Add to Must-Have Plants
+                            </Button>
+                            :
+                            <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
+                              <p style={{ margin: 0, textAlign: 'center' }}>You must be logged in to access this feature.</p>
+                              <p style={{ margin: 0, textAlign: 'center' }}>Please Register or Login via the links above ^^</p>
+                            </div>
+                          }
+                        </>
                       }
-
                     </div>
                   </div>
                 </Col>

@@ -52,14 +52,15 @@ const MyProfile = () => {
       {
         user && mustHavePlants ?
           <>
+            {/* <div style={{ maxWidth: '800px' }} className='d-flex flex-column justify-content-center align-items-center'> */}
             <Container className='my-4'>
               <Row>
-                <Col md={5} className='d-flex justify-content-center p-4'>
+                <Col md={5} className='d-flex justify-content-center py-4 px-3'>
                   <Image src={user.profile_image} alt={user.username} rounded fluid />
                 </Col>
                 <Col md={7} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <h1 className='text-center mt-3 mb-3'>{user.username}</h1>
-                  <div className='px-4'>
+                  <div className='px-3'>
                     <h4 className='mb-4' style={{ textAlign: 'center' }}>{user.three_word_bio}</h4>
                     <p>{user.about_me}</p>
                   </div>
@@ -82,11 +83,14 @@ const MyProfile = () => {
               </Container>
               <h5 className='mb-4' style={{ textAlign: 'center' }}>Total cost: £{totalCost}</h5>
             </Container >
+            {/* </div> */}
           </>
           :
           <div>Loading... / Error</div>
       }
+      {/* </div> */}
     </>
+
   )
 
 }

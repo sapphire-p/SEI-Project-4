@@ -13,7 +13,8 @@ const NavBar = () => {
 
   useEffect(() => {
 
-  }, [location.pathname])
+  }, [location.pathname]) // triggers a rerender when user's location pathname (URL pathname) changes
+
 
   const userIsAuthenticated = () => {
     const payload = getPayload()
