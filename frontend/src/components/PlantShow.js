@@ -45,9 +45,9 @@ const PlantShow = () => {
                   <h2 className='text-center mt-3 mb-4'>{plant.name}</h2>
                   <div className='px-4'>
                     <p>{plant.description}</p>
-                    <p>Height (cm): {plant.height_in_cm}</p>
-                    <p>Light level: {plant.light_level}</p>
-                    <p>Watering: {plant.watering_frequency}</p>
+                    <p><span className='font-weight-bold'>Height (cm):</span> {plant.height_in_cm}</p>
+                    <p><span className='font-weight-bold'>Light level:</span> {plant.light_level}</p>
+                    <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
                     <p>£{plant.price_in_GBP}</p>
                   </div>
                 </Col>

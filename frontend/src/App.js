@@ -5,7 +5,7 @@ import Home from './components/Home'
 import Register from './components/Register'
 import Login from './components/Login'
 import PlantShow from './components/PlantShow'
-import MyProfile from './components/PlantShow'
+import MyProfile from './components/MyProfile'
 
 
 const App = () => {
