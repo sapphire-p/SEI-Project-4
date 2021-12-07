@@ -11,6 +11,7 @@ const MyProfile = () => {
   const { id } = useParams()
   const [user, setUser] = useState(null)
   const [mustHavePlants, setMustHavePlants] = useState(null)
+  const [totalCost, setTotalCost] = useState(null)
 
 
   useEffect(() => {
@@ -27,8 +28,22 @@ const MyProfile = () => {
   }, [id])
 
 
+  useEffect(() => {
+    if (!mustHavePlants) {
+      return
+    } else {
+      let total = 0
+      mustHavePlants.map(plant => {
+        total += parseFloat(plant.price_in_GBP)
+      })
+      setTotalCost(total.toFixed(2))
+    }
+
+  }, [mustHavePlants])
+
   // console.log(user)
-  console.log(mustHavePlants)
+  // console.log(mustHavePlants)
+  console.log(totalCost)
 
 
 
@@ -52,9 +67,10 @@ const MyProfile = () => {
               </Row>
             </Container>
             <Container>
-              <h2 className="text-center">My Must-Have Plants</h2>
+              <h2 className='text-center mb-3'>My Must-Have Plants</h2>
+              <h5 className='mb-3' style={{ textAlign: 'center' }}>The plants on this site that I&apos;m loving right now...</h5>
               <Container>
-                <div id="custom-card-columns" className="card-columns">
+                <div id="custom-card-columns" className="card-columns py-3">
                   {mustHavePlants.map(plant => {
                     return (
                       <div key={plant.id}>
@@ -64,6 +80,7 @@ const MyProfile = () => {
                   })}
                 </div>
               </Container>
+              <h5 className='mb-4' style={{ textAlign: 'center' }}>Total cost: £{totalCost}</h5>
             </Container >
           </>
           :
