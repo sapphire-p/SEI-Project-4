@@ -1,34 +1,64 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { getUserIdFromLocalStorage, getTokenFromLocalStorage } from './helpers/auth'
 import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
+import Button from 'react-bootstrap/Button'
 
 
 const PlantShow = () => {
 
   const [plant, setPlant] = useState(null)
   const [reviews, setReviews] = useState(null)
+  const [loggedInUserId, setLoggedInUserId] = useState(null)
+  const [token, setToken] = useState()
   const { id } = useParams()
+  const [getRequestErrors, setGetRequestErrors] = useState(false)
+  const [putRequestErrors, setPutRequestErrors] = useState(false)
+  const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/plants/${id}`)
         console.log(data)
-        console.log(data.review_set)
+        // console.log(data.review_set)
         setPlant(data)
         setReviews(data.review_set)
       } catch (err) {
         console.log(err)
+        setGetRequestErrors(true)
       }
     }
     getData()
   }, [id])
 
+  useEffect(() => {
+    setLoggedInUserId(getUserIdFromLocalStorage())
+    setToken(getTokenFromLocalStorage())
+  }, [])
 
-  // console.log(plant)
+
+  const handleMustHave = async () => {
+    try {
+      await axios.put(
+        `/api/users/${loggedInUserId}/`,
+        { plant_id: id }, // id here refers to plant id, taken from the params
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+    } catch (err) {
+      setPutRequestErrors(true)
+    }
+  }
+
+
+  // console.log('plant.id ->', plant.id)
   // console.log(reviews)
+  console.log('loggedInUserId ->', loggedInUserId)
+  console.log('token ->', token)
+  console.log('getRequestErrors ->', getRequestErrors)
+  console.log('putRequestErrors ->', putRequestErrors)
 
 
   return (
@@ -38,7 +68,7 @@ const PlantShow = () => {
           <>
             <Container className='my-4'>
               <Row>
-                <Col md={5} className='p-4'>
+                <Col md={5} className='d-flex align-items-center p-4'>
                   <Image src={plant.image} alt={plant.name} rounded fluid />
                 </Col>
                 <Col md={7} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -49,6 +79,11 @@ const PlantShow = () => {
                     <p><span className='font-weight-bold'>Light level:</span> {plant.light_level}</p>
                     <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
                     <p>£{plant.price_in_GBP}</p>
+                    <div className='d-flex justify-content-center'>
+                      <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                        Add to Must-Have Plants
+                      </Button>
+                    </div>
                   </div>
                 </Col>
               </Row>
