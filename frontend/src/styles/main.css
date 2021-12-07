@@ -8,10 +8,18 @@
   }
 } */
 
-.blue-title {
-  color: blue;
-}
+/* .blue-title {
+  color: green;
+} */
 
+#hero {
+  color: white;
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
+  url('./Shed-ivy_background.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 /* NB: Extra small devices (portrait phones, less than 576px) have no media query since this is the default in Bootstrap */
 

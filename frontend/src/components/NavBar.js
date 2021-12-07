@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { getPayload, getUsernameFromLocalStorage, getUserIdFromLocalStorage } from './helpers/auth'
 import Navbar from 'react-bootstrap/Navbar'
 import { Nav } from 'react-bootstrap'
+// import Image from 'react-bootstrap/Image'
 
 
 const NavBar = () => {
@@ -30,10 +31,11 @@ const NavBar = () => {
 
   // console.log(getUserIdFromLocalStorage())
 
+
   return (
     <>
-      <Navbar expand='lg' bg='dark' variant='dark'>
-        <Navbar.Brand href='/' className='mr-5' style={{ fontSize: '2rem' }}>The Potting Shed</Navbar.Brand>
+      <Navbar style={{ backgroundColor: '#151515' }} expand='lg' variant='dark'>
+        <Navbar.Brand href='/' className='mr-5' style={{ fontSize: '2rem' }}><img src='./The-Potting-Shed_logo.png' />The Potting Shed</Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
 

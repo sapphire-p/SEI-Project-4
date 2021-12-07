@@ -25,7 +25,7 @@ const Home = () => {
     <>
       {plants ?
         <>
-          <div style={{ backgroundColor: 'red' }} className="jumbotron jumbotron-fluid">
+          <div id='hero' className="jumbotron jumbotron-fluid">
             <Container className="text-center">
               <h1 className="display-5 font-weight-bold">Welcome to The Potting Shed</h1>
               <p className="lead mt-4">
