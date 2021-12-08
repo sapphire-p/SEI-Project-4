@@ -19,6 +19,7 @@ const PlantShow = () => {
   const [putRequestErrors, setPutRequestErrors] = useState(false)
   const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
   const [reviewPostedDataResponse, setReviewPostedDataResponse] = useState(false)
+  const [numberOfReviewsDeleted, setNumberOfReviewsDeleted] = useState(0)
 
   const userIsAuthenticated = () => {
     const payload = getPayload()
@@ -52,7 +53,7 @@ const PlantShow = () => {
       }
     }
     getData()
-  }, [id, reviewPostedDataResponse])
+  }, [id, reviewPostedDataResponse, numberOfReviewsDeleted])
 
 
   useEffect(() => {
@@ -99,23 +100,32 @@ const PlantShow = () => {
     }
   }
 
-  const handleDeleteReview = (reviewId) => {
-    console.log(reviewId)
-
+  const handleDeleteReview = async (reviewId) => {
+    console.log('reviewId ->', reviewId)
+    try {
+      await axios.delete(
+        `/api/reviews/${reviewId}/`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      setNumberOfReviewsDeleted(numberOfReviewsDeleted + 1)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   // console.log('plant.id ->', plant.id)
   // console.log(reviews)
-  console.log('loggedInUserId ->', loggedInUserId)
+  // console.log('loggedInUserId ->', loggedInUserId)
   // console.log('token ->', token)
   // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
+
+  // console.log('reviewPostRequestErrors ->', reviewPostRequestErrors)
+  // console.log('reviewFormData ->', reviewFormData)
+  // console.log('reviewPostedDataResponse ->', reviewPostedDataResponse)
+  console.log('numberOfReviewsDeleted ->', numberOfReviewsDeleted)
+
   console.log('getRequestErrors ->', getRequestErrors)
   console.log('putRequestErrors ->', putRequestErrors)
-  // console.log('reviewPostRequestErrors ->', reviewPostRequestErrors)
-  console.log('reviewFormData ->', reviewFormData)
-  console.log('reviewPostedDataResponse ->', reviewPostedDataResponse)
-
-
 
   return (
     <>
@@ -185,7 +195,7 @@ const PlantShow = () => {
                             <p>{review.comment}</p>
                             <>
                               {parseInt(loggedInUserId) === review.review_owner.id ?
-                                <button onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete comment</button>
+                                <button onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete your review</button>
                                 :
                                 <div style={{ marginBottom: '1.8rem' }}></div>
                               }
