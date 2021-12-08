@@ -195,15 +195,15 @@ const PlantShow = () => {
                 </Col>
               }
             </Container >
-            <div>
-              <h3 className="text-center mb-4">Leave a review</h3>
-              <div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h3 className="text-center mb-4 mt-2">Leave a review</h3>
+              <div style={{ width: '50%' }}>
                 {/* <div className='m-5'> */}
                 <Form onSubmit={handleReviewSubmit}>
 
                   <Form.Group className='mb-3' controlId='formUsername'>
                     <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
-                    <Form.Control type='number' placeholder='Enter a rating from 0 to 5 inclusive' name='rating' value={reviewFormData.rating} onChange={handleChange} />
+                    <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
                   </Form.Group>
 
                   <Form.Group className='mb-3' controlId='formPassword'>
