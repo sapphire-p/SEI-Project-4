@@ -39,7 +39,7 @@ const Community = () => {
               {users.map(user => {
                 return (
                   <div key={user.id}>
-                    <Card style={{ borderStyle: 'none' }} >
+                    <Card style={{ borderStyle: 'none', minHeight: '31vh' }} >
                       <Link to={`/profile/${user.id}`}>
                         <Card.Img variant="top" src={user.profile_image} alt={user.username} />
                       </Link>

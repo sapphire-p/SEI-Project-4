@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
 
 
+
 const Profile = () => {
 
   const { id } = useParams()

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 
 const PlantShow = () => {
@@ -17,6 +18,7 @@ const PlantShow = () => {
   const [getRequestErrors, setGetRequestErrors] = useState(false)
   const [putRequestErrors, setPutRequestErrors] = useState(false)
   const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
+  const [reviewSubmitted, setReviewSubmitted] = useState(false)
 
   const userIsAuthenticated = () => {
     const payload = getPayload()
@@ -24,6 +26,13 @@ const PlantShow = () => {
     const now = Math.round(Date.now() / 1000)
     return now < payload.exp
   }
+
+
+  const [reviewFormData, setReviewFormData] = useState({
+    rating: '',
+    comment: '',
+    plant: id,
+  })
 
 
   useEffect(() => {
@@ -38,13 +47,17 @@ const PlantShow = () => {
       }
     }
     getData()
-  }, [id])
+  }, [id, reviewSubmitted])
 
 
   useEffect(() => {
     setLoggedInUserId(getUserIdFromLocalStorage())
     setToken(getTokenFromLocalStorage())
   }, [])
+
+  // useEffect(() => {
+
+  // }, [reviewSubmitted])
 
 
   const handleMustHave = async () => {
@@ -65,14 +78,41 @@ const PlantShow = () => {
   }
 
 
+  const handleChange = (event) => {
+    const newReviewFormData = { ...reviewFormData, [event.target.name]: event.target.value }
+    setReviewFormData(newReviewFormData)
+  }
+
+  const handleReviewSubmit = async (event) => {
+    event.preventDefault()
+    try {
+      const { data } = await axios.post(
+        '/api/reviews/',
+        reviewFormData,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      setReviewSubmitted(data)
+      // console.log(data)
+      // setTokenToLocalStorage(data.token)
+      // setUsernameToLocalStorage(formData.username)
+      // setUserIdToLocalStorage(data.user_id)
+      // history.push('/')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   // console.log('plant.id ->', plant.id)
   // console.log(reviews)
   // console.log('loggedInUserId ->', loggedInUserId)
   // console.log('token ->', token)
+  // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
   console.log('getRequestErrors ->', getRequestErrors)
   console.log('putRequestErrors ->', putRequestErrors)
-  // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
+  console.log('reviewFormData ->', reviewFormData)
+  console.log('reviewSubmitted ->', reviewSubmitted)
+
 
 
   return (
@@ -123,26 +163,28 @@ const PlantShow = () => {
                 </Col>
               </Row>
             </Container>
-            <Container>
-              <h2 className="text-center">Reviews</h2>
+            <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h2 className="text-center mb-4">Reviews</h2>
               {reviews.length > 0 ?
                 <>
                   {reviews.map(review => {
                     return (
-                      <div key={review.id}>
+                      <div key={review.id} style={{ margin: '0 5vw', width: '60%' }}>
+                        {/* <div style={{ width: '100%' }}> */}
                         <Row>
-                          <Col>
-                            <p>{review.review_owner.username}</p>
+                          <Col md={7}>
+                            <p className='font-weight-bold'>{review.review_owner.username}</p>
                           </Col>
-                          <Col>
-                            <p>Rating: {review.rating}/5</p>
+                          <Col md={4}>
+                            <p className='font-weight-bold'>Rating: {review.rating}/5</p>
                           </Col>
                         </Row>
                         <Row>
                           <Col>
-                            <p>{review.comment}</p>
+                            <p style={{ marginBottom: '1.8rem' }}>{review.comment}</p>
                           </Col>
                         </Row>
+                        {/* </div> */}
                       </div>
                     )
                   })}
@@ -153,6 +195,32 @@ const PlantShow = () => {
                 </Col>
               }
             </Container >
+            <div>
+              <h3 className="text-center mb-4">Leave a review</h3>
+              <div>
+                {/* <div className='m-5'> */}
+                <Form onSubmit={handleReviewSubmit}>
+
+                  <Form.Group className='mb-3' controlId='formUsername'>
+                    <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
+                    <Form.Control type='number' placeholder='Enter a rating from 0 to 5 inclusive' name='rating' value={reviewFormData.rating} onChange={handleChange} />
+                  </Form.Group>
+
+                  <Form.Group className='mb-3' controlId='formPassword'>
+                    <Form.Label className='font-weight-bold'>Comment</Form.Label>
+                    <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
+                    {/* {error && <Form.Text className='text-danger'>Invalid login credentials</Form.Text>} */}
+                  </Form.Group>
+
+                  <div className='d-flex justify-content-center'>
+                    <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
+                      Submit Review
+                    </Button>
+                  </div>
+                </Form>
+                {/* </div> */}
+              </div>
+            </div>
           </>
           :
           <div>Loading... / Error</div>
@@ -182,3 +250,5 @@ export default PlantShow
   </Col>
 </Row>
 </Container > */}
+
+// className='d-flex flex-column justify-content-center align-items-center'

@@ -2,6 +2,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Review
+from plants.models import Plant
+from plants.serializers import PopulatedPlantSerializer
 from .serializers import ReviewSerializer, PopulatedReviewSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -21,7 +23,11 @@ class ReviewListView(APIView):
             # The line below was previously review.save() but this way the pk id of the user that is logged in when posting the review
             # will automatically be added as the value of the review_owner field in the review
             review.save(review_owner=request.user)
-            return Response(review.data, status=status.HTTP_201_CREATED)
+            # The syntax 'review.data['plant']' below is the Python syntax to get the value of the plant key out of an ordered dictionary
+            # Instead of sending back the single review just created, this now sends back the whole plant, with alll reviews incl. the new one on it:
+            plant = Plant.objects.get(id=review.data['plant'])
+            serialized_plant = PopulatedPlantSerializer(plant)
+            return Response(serialized_plant.data, status=status.HTTP_201_CREATED)
         else:
             return Response(review.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
 
