@@ -168,7 +168,6 @@ const PlantShow = () => {
                   {reviews.map(review => {
                     return (
                       <div key={review.id} style={{ margin: '0 5vw', width: '60%' }}>
-                        {/* <div style={{ width: '100%' }}> */}
                         <Row>
                           <Col md={7}>
                             <p className='font-weight-bold'>{review.review_owner.username}</p>
@@ -182,7 +181,6 @@ const PlantShow = () => {
                             <p style={{ marginBottom: '1.8rem' }}>{review.comment}</p>
                           </Col>
                         </Row>
-                        {/* </div> */}
                       </div>
                     )
                   })}
@@ -194,33 +192,39 @@ const PlantShow = () => {
               }
             </Container >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
-              <h3 className="text-center mb-4 mt-2">Leave a review</h3>
-              <div style={{ width: '50%' }}>
-                <Form onSubmit={handleReviewSubmit}>
+              {userIsAuthenticated() ?
+                <>
+                  <h3 className="text-center mb-4 mt-2">Leave a review</h3>
+                  <div style={{ width: '50%' }}>
+                    <Form onSubmit={handleReviewSubmit}>
 
-                  <Form.Group className='mb-3' controlId='formUsername'>
-                    <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
-                    <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
-                    <Form.Text className='text-danger'>
-                      {reviewPostRequestErrors.rating ? reviewPostRequestErrors.rating[0] : ''}
-                    </Form.Text>
-                  </Form.Group>
+                      <Form.Group className='mb-3' controlId='formUsername'>
+                        <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
+                        <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
+                        <Form.Text className='text-danger'>
+                          {reviewPostRequestErrors.rating ? reviewPostRequestErrors.rating[0] : ''}
+                        </Form.Text>
+                      </Form.Group>
 
-                  <Form.Group className='mb-3' controlId='formPassword'>
-                    <Form.Label className='font-weight-bold'>Comment</Form.Label>
-                    <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
-                    <Form.Text className='text-danger'>
-                      {reviewPostRequestErrors.comment ? reviewPostRequestErrors.comment[0] : ''}
-                    </Form.Text>
-                  </Form.Group>
+                      <Form.Group className='mb-3' controlId='formPassword'>
+                        <Form.Label className='font-weight-bold'>Comment</Form.Label>
+                        <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
+                        <Form.Text className='text-danger'>
+                          {reviewPostRequestErrors.comment ? reviewPostRequestErrors.comment[0] : ''}
+                        </Form.Text>
+                      </Form.Group>
 
-                  <div className='d-flex justify-content-center'>
-                    <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
-                      Submit Review
-                    </Button>
+                      <div className='d-flex justify-content-center'>
+                        <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
+                          Submit Review
+                        </Button>
+                      </div>
+                    </Form>
                   </div>
-                </Form>
-              </div>
+                </>
+                :
+                <div></div>
+              }
             </div>
           </>
           :
