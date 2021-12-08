@@ -36,9 +36,9 @@ const NavBar = () => {
     <>
       <Navbar style={{ backgroundColor: '#151515' }} expand='lg' variant='dark'>
         <Navbar.Brand href='/' className='mr-5' style={{ fontSize: '2rem' }}>
-          <img style={{ margin: '0 10px' }} width='60' src='https://res.cloudinary.com/dfgnpqkiv/image/upload/v1638954811/The-Potting-Shed/The-Potting-Shed_logo_gh5mqn.png' />
-          <div>
-            The Potting Shed
+          <div className='d-flex flex-row align-items-center'>
+            <img style={{ margin: '0 10px' }} width='60' src='https://res.cloudinary.com/dfgnpqkiv/image/upload/v1638954811/The-Potting-Shed/The-Potting-Shed_logo_gh5mqn.png' />
+            <h1 style={{ margin: '0 auto', fontSize: '2rem' }}>The Potting Shed</h1>
           </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
