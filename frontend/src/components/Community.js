@@ -35,7 +35,7 @@ const Community = () => {
             </Container>
           </div>
           <Container>
-            <div id="custom-card-columns" className="card-columns">
+            <div id="custom-card-columns-community" className="card-columns">
               {users.map(user => {
                 return (
                   <div key={user.id}>
@@ -44,7 +44,7 @@ const Community = () => {
                         <Card.Img variant="top" src={user.profile_image} alt={user.username} />
                       </Link>
                       <Card.Body>
-                        <Card.Title className="text-center mb-1">{user.username}</Card.Title>
+                        <Card.Title style={{ fontSize: '1.13rem' }} className="text-center mb-1">{user.username}</Card.Title>
                         <Card.Text className="text-center">
                           {user.three_word_bio}
                         </Card.Text>
