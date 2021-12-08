@@ -16,7 +16,7 @@
   color: white;
   background-image:
   linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)),
-  url('./Shed-ivy_background.jpg');
+  url('./Shed-ivy_background_reduced-size.jpg');
   background-size: cover;
   background-position: center;
 }
