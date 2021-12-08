@@ -39,12 +39,12 @@ const Community = () => {
               {users.map(user => {
                 return (
                   <div key={user.id}>
-                    <Card style={{ borderStyle: 'none' }}>
-                      <Link to={`/users/${user.id}`}>
+                    <Card style={{ borderStyle: 'none' }} >
+                      <Link to={`/profile/${user.id}`}>
                         <Card.Img variant="top" src={user.profile_image} alt={user.username} />
                       </Link>
                       <Card.Body>
-                        <Card.Title className="text-center">{user.username}</Card.Title>
+                        <Card.Title className="text-center mb-1">{user.username}</Card.Title>
                         <Card.Text className="text-center">
                           {user.three_word_bio}
                         </Card.Text>
@@ -65,3 +65,13 @@ const Community = () => {
 }
 
 export default Community
+
+
+// Card.Img:
+// variant="top"
+
+{/* <Link to={`/profile/${user.id}`}>
+<div style={{ height: '200px', width: '200px' }} className='d-flex flex-row align-items-center'>
+  <Card.Img style={{ height: '100%' }} variant="top" src={user.profile_image} alt={user.username} />
+</div>
+</Link> */}
