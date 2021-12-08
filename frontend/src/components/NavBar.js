@@ -35,7 +35,12 @@ const NavBar = () => {
   return (
     <>
       <Navbar style={{ backgroundColor: '#151515' }} expand='lg' variant='dark'>
-        <Navbar.Brand href='/' className='mr-5' style={{ fontSize: '2rem' }}><img src='./The-Potting-Shed_logo.png' />The Potting Shed</Navbar.Brand>
+        <Navbar.Brand href='/' className='mr-5' style={{ fontSize: '2rem' }}>
+          <img style={{ margin: '0 10px' }} width='60' src='https://res.cloudinary.com/dfgnpqkiv/image/upload/v1638954811/The-Potting-Shed/The-Potting-Shed_logo_gh5mqn.png' />
+          <div>
+            The Potting Shed
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse id='responsive-navbar-nav'>
 
