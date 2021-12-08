@@ -74,7 +74,7 @@ const Profile = () => {
                 </Col>
               </Row>
             </Container>
-            <Container style={{ width: '80%', minWidth: '400px' }}>
+            <Container style={{ width: '80%', minWidth: '400px', marginBottom: '50px' }}>
               <h2 className='text-center mb-3'>My Must-Have Plants</h2>
               <h5 className='mb-3' style={{ textAlign: 'center' }}>The plants on this site that I&apos;m loving right now...</h5>
               {userLoggedIn === id ?
@@ -135,17 +135,13 @@ const Profile = () => {
                   }
                 </>
               }
-
             </Container >
           </>
           :
           <div>Loading... / Error</div>
       }
-      {/* </div> */}
     </>
-
   )
-
 }
 
 export default Profile

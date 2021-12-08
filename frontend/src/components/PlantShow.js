@@ -18,7 +18,7 @@ const PlantShow = () => {
   const [getRequestErrors, setGetRequestErrors] = useState(false)
   const [putRequestErrors, setPutRequestErrors] = useState(false)
   const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
-  const [reviewSubmitted, setReviewSubmitted] = useState(false)
+  const [reviewPostedDataResponse, setReviewPostedDataResponse] = useState(false)
 
   const userIsAuthenticated = () => {
     const payload = getPayload()
@@ -34,6 +34,11 @@ const PlantShow = () => {
     plant: id,
   })
 
+  const [reviewPostRequestErrors, setReviewPostRequestErrors] = useState({
+    rating: '',
+    comment: '',
+  })
+
 
   useEffect(() => {
     const getData = async () => {
@@ -47,17 +52,13 @@ const PlantShow = () => {
       }
     }
     getData()
-  }, [id, reviewSubmitted])
+  }, [id, reviewPostedDataResponse])
 
 
   useEffect(() => {
     setLoggedInUserId(getUserIdFromLocalStorage())
     setToken(getTokenFromLocalStorage())
   }, [])
-
-  // useEffect(() => {
-
-  // }, [reviewSubmitted])
 
 
   const handleMustHave = async () => {
@@ -91,14 +92,10 @@ const PlantShow = () => {
         reviewFormData,
         { headers: { Authorization: `Bearer ${token}` } }
       )
-      setReviewSubmitted(data)
-      // console.log(data)
-      // setTokenToLocalStorage(data.token)
-      // setUsernameToLocalStorage(formData.username)
-      // setUserIdToLocalStorage(data.user_id)
-      // history.push('/')
+      setReviewPostedDataResponse(data)
     } catch (err) {
       console.log(err)
+      setReviewPostRequestErrors(err.response.data)
     }
   }
 
@@ -110,8 +107,9 @@ const PlantShow = () => {
   // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
   console.log('getRequestErrors ->', getRequestErrors)
   console.log('putRequestErrors ->', putRequestErrors)
+  // console.log('reviewPostRequestErrors ->', reviewPostRequestErrors)
   console.log('reviewFormData ->', reviewFormData)
-  console.log('reviewSubmitted ->', reviewSubmitted)
+  console.log('reviewPostedDataResponse ->', reviewPostedDataResponse)
 
 
 
@@ -195,21 +193,25 @@ const PlantShow = () => {
                 </Col>
               }
             </Container >
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
               <h3 className="text-center mb-4 mt-2">Leave a review</h3>
               <div style={{ width: '50%' }}>
-                {/* <div className='m-5'> */}
                 <Form onSubmit={handleReviewSubmit}>
 
                   <Form.Group className='mb-3' controlId='formUsername'>
                     <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
                     <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
+                    <Form.Text className='text-danger'>
+                      {reviewPostRequestErrors.rating ? reviewPostRequestErrors.rating[0] : ''}
+                    </Form.Text>
                   </Form.Group>
 
                   <Form.Group className='mb-3' controlId='formPassword'>
                     <Form.Label className='font-weight-bold'>Comment</Form.Label>
                     <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
-                    {/* {error && <Form.Text className='text-danger'>Invalid login credentials</Form.Text>} */}
+                    <Form.Text className='text-danger'>
+                      {reviewPostRequestErrors.comment ? reviewPostRequestErrors.comment[0] : ''}
+                    </Form.Text>
                   </Form.Group>
 
                   <div className='d-flex justify-content-center'>
@@ -218,7 +220,6 @@ const PlantShow = () => {
                     </Button>
                   </div>
                 </Form>
-                {/* </div> */}
               </div>
             </div>
           </>
