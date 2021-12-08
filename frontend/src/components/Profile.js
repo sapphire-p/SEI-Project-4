@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { Container, Row, Col } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 import PlantCard from './PlantCard'
-import { getUserIdFromLocalStorage } from './helpers/auth'
+import { getUserIdFromLocalStorage, getTokenFromLocalStorage } from './helpers/auth'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 
@@ -13,10 +14,13 @@ import { Link } from 'react-router-dom'
 const Profile = () => {
 
   const { id } = useParams()
+  const history = useHistory()
+
   const [user, setUser] = useState(null)
   const [mustHavePlants, setMustHavePlants] = useState(null)
   const [totalCost, setTotalCost] = useState(null)
   const [userLoggedIn, setUserLoggedIn] = useState(null)
+  const [token, setToken] = useState()
 
 
   useEffect(() => {
@@ -26,6 +30,7 @@ const Profile = () => {
         setUser(data)
         setMustHavePlants(data.must_have_plants)
         setUserLoggedIn(getUserIdFromLocalStorage())
+        setToken(getTokenFromLocalStorage())
       } catch (err) {
         console.log(err)
       }
@@ -46,6 +51,21 @@ const Profile = () => {
     }
 
   }, [mustHavePlants])
+
+
+  const handleDeleteProfile = async () => {
+    console.log('id of user ->', id)
+    try {
+      await axios.delete(
+        `/api/users/${id}/`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
+      window.localStorage.removeItem('token') // remove token from local storage
+      history.push('/') // redirect user to the home page
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
   // console.log(user)
   // console.log(mustHavePlants)
@@ -100,6 +120,12 @@ const Profile = () => {
                       <p style={{ margin: 0, textAlign: 'center' }}>Click the &apos;Add to Must-Have Plants&apos; button on a plant page to add it</p>
                     </div>
                   }
+                  <div style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <Button onClick={handleDeleteProfile} variant='primary' type='submit' className='bg-danger mt-1 my-3' style={{ width: '50%', borderStyle: 'none' }}>
+                      Delete My Profile<br />
+                      Please note: this cannot be reversed
+                    </Button>
+                  </div>
                 </>
                 :
                 <>
