@@ -99,10 +99,14 @@ const PlantShow = () => {
     }
   }
 
+  const handleDeleteReview = (reviewId) => {
+    console.log(reviewId)
+
+  }
 
   // console.log('plant.id ->', plant.id)
   // console.log(reviews)
-  // console.log('loggedInUserId ->', loggedInUserId)
+  console.log('loggedInUserId ->', loggedInUserId)
   // console.log('token ->', token)
   // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
   console.log('getRequestErrors ->', getRequestErrors)
@@ -178,7 +182,14 @@ const PlantShow = () => {
                         </Row>
                         <Row>
                           <Col>
-                            <p style={{ marginBottom: '1.8rem' }}>{review.comment}</p>
+                            <p>{review.comment}</p>
+                            <>
+                              {parseInt(loggedInUserId) === review.review_owner.id ?
+                                <button onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete comment</button>
+                                :
+                                <div style={{ marginBottom: '1.8rem' }}></div>
+                              }
+                            </>
                           </Col>
                         </Row>
                       </div>
