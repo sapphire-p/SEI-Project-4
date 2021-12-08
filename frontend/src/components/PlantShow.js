@@ -192,14 +192,15 @@ const PlantShow = () => {
                         </Row>
                         <Row>
                           <Col>
-                            <p>{review.comment}</p>
-                            <>
-                              {parseInt(loggedInUserId) === review.review_owner.id ?
-                                <button onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete your review</button>
-                                :
-                                <div style={{ marginBottom: '1.8rem' }}></div>
-                              }
-                            </>
+                            <div>{review.comment}<br />
+                              <>
+                                {parseInt(loggedInUserId) === review.review_owner.id ?
+                                  <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
+                                  :
+                                  <div style={{ marginBottom: '1.8rem' }}></div>
+                                }
+                              </>
+                            </div>
                           </Col>
                         </Row>
                       </div>
