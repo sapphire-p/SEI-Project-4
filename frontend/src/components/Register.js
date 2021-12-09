@@ -56,13 +56,10 @@ const Register = () => {
       await axios.post('/api/users/register/', newFormData)
       history.push('/login')
     } catch (err) {
-      console.log(err.response.data)
       setErrors(err.response.data)
     }
   }
 
-  // console.log(formData)
-  // console.log(errors)
 
   return (
     <Container style={{ width: '80%', minWidth: '500px' }}>
@@ -149,7 +146,6 @@ const Register = () => {
       </div>
     </Container >
   )
-
 }
 
 export default Register
