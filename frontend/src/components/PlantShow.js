@@ -282,24 +282,3 @@ const PlantShow = () => {
 }
 
 export default PlantShow
-
-
-
-{/* <Container>
-<h2 className="text-center">Reviews</h2>
-<Row>
-  <Col>
-    <Image src={plant.image} rounded fluid />
-  </Col>
-  <Col>
-    <h2 className="text-center">{plant.name}</h2>
-    <p>{plant.description}</p>
-    <p>Height (cm): {plant.height_in_cm}</p>
-    <p>Light level: {plant.light_level}</p>
-    <p>Watering: {plant.watering_frequency}</p>
-    <p>Price: £{plant.price_in_GBP}</p>
-  </Col>
-</Row>
-</Container > */}
-
-// className='d-flex flex-column justify-content-center align-items-center'

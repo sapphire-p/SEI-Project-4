@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 const Community = () => {
 
   const [users, setUsers] = useState(null)
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
@@ -15,7 +16,7 @@ const Community = () => {
         const { data } = await axios.get('/api/users')
         setUsers(data)
       } catch (err) {
-        console.log(err)
+        setErrors(true)
       }
     }
     getData()
@@ -57,7 +58,25 @@ const Community = () => {
           </Container>
         </>
         :
-        <div>Loading... / Error</div>
+        <>
+          {errors ?
+            <Container className='my-5'>
+              < Row >
+                <Col>
+                  <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Oops! Something went wrong... <br /> Please refresh the page or try another link</h1>
+                </Col>
+              </Row>
+            </Container >
+            :
+            <Container className='my-4'>
+              <Row>
+                <Col>
+                  <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Loading...</h1>
+                </Col>
+              </Row>
+            </Container>
+          }
+        </>
       }
     </>
   )
@@ -65,13 +84,3 @@ const Community = () => {
 }
 
 export default Community
-
-
-// Card.Img:
-// variant="top"
-
-{/* <Link to={`/profile/${user.id}`}>
-<div style={{ height: '200px', width: '200px' }} className='d-flex flex-row align-items-center'>
-  <Card.Img style={{ height: '100%' }} variant="top" src={user.profile_image} alt={user.username} />
-</div>
-</Link> */}
