@@ -10,7 +10,7 @@ const PlantCard = (plant) => {
         <Card.Img variant="top" src={plant.image} alt={plant.name} />
       </Link>
       <Card.Body>
-        <Card.Title className="text-center">{plant.name}</Card.Title>
+        <Card.Title className="text-center" style={{ fontSize: '1.1rem' }}>{plant.name}</Card.Title>
         <Card.Text className="text-center">
           £{plant.price_in_GBP}
         </Card.Text>
