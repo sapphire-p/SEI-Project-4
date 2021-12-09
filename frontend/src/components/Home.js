@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
 import PlantCard from './PlantCard'
 
@@ -7,6 +7,7 @@ import PlantCard from './PlantCard'
 const Home = () => {
 
   const [plants, setPlants] = useState(null)
+  const [errors, setErrors] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
@@ -14,7 +15,7 @@ const Home = () => {
         const { data } = await axios.get('/api/plants')
         setPlants(data)
       } catch (err) {
-        console.log(err)
+        setErrors(true)
       }
     }
     getData()
@@ -47,7 +48,25 @@ const Home = () => {
           </Container>
         </>
         :
-        <div>Loading... / Error</div>
+        <>
+          {errors ?
+            <Container className='my-5'>
+              < Row >
+                <Col>
+                  <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Oops! Something went wrong... <br /> Please refresh the page or try another link</h1>
+                </Col>
+              </Row>
+            </Container >
+            :
+            <Container className='my-4'>
+              <Row>
+                <Col>
+                  <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Loading...</h1>
+                </Col>
+              </Row>
+            </Container>
+          }
+        </>
       }
     </>
   )
@@ -55,27 +74,3 @@ const Home = () => {
 }
 
 export default Home
-
-
-
-/* <Row xs={1} sm={1} md={3} lg={4} xl={4}>
-  {plants.map(plant => {
-    return (
-      <Col key={plant.id} className="text-center">
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the cards content.
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Col>
-    )
-  })}
-</Row> */
-
-
-// price={plant.price_in_GBP}
