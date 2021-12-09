@@ -21,6 +21,7 @@ const Profile = () => {
   const [totalCost, setTotalCost] = useState(null)
   const [userLoggedIn, setUserLoggedIn] = useState(null)
   const [token, setToken] = useState()
+  const [errors, setErrors] = useState(false)
 
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const Profile = () => {
         setUserLoggedIn(getUserIdFromLocalStorage())
         setToken(getTokenFromLocalStorage())
       } catch (err) {
-        console.log(err)
+        setErrors(true)
       }
     }
     getData()
@@ -66,13 +67,6 @@ const Profile = () => {
       console.log(err)
     }
   }
-
-  // console.log(user)
-  // console.log(mustHavePlants)
-  // console.log(totalCost)
-  console.log('userLoggedIn, user id whose profile it is ->', userLoggedIn, id)
-
-
 
 
   return (
@@ -164,7 +158,25 @@ const Profile = () => {
             </Container >
           </>
           :
-          <div>Loading... / Error</div>
+          <>
+            {errors ?
+              <Container className='my-5'>
+                < Row >
+                  <Col>
+                    <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Oops! Something went wrong... <br /> Please refresh the page or try another link</h1>
+                  </Col>
+                </Row>
+              </Container >
+              :
+              <Container className='my-4'>
+                <Row>
+                  <Col>
+                    <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Loading...</h1>
+                  </Col>
+                </Row>
+              </Container>
+            }
+          </>
       }
     </>
   )
