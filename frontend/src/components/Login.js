@@ -48,7 +48,7 @@ const Login = () => {
 
 
   return (
-    <Container style={{ width: '50%', minWidth: '490px' }}>
+    <Container style={{ width: '50%', minWidth: '490px', maxWidth: '650px' }}>
       <div className='m-5'>
         <h1 className='mb-5'>Login</h1>
         <Form onSubmit={handleSubmit}>
