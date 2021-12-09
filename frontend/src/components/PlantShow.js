@@ -122,135 +122,159 @@ const PlantShow = () => {
   // console.log('reviewPostRequestErrors ->', reviewPostRequestErrors)
   // console.log('reviewFormData ->', reviewFormData)
   // console.log('reviewPostedDataResponse ->', reviewPostedDataResponse)
-  console.log('numberOfReviewsDeleted ->', numberOfReviewsDeleted)
+  // console.log('numberOfReviewsDeleted ->', numberOfReviewsDeleted)
 
-  console.log('getRequestErrors ->', getRequestErrors)
-  console.log('putRequestErrors ->', putRequestErrors)
+  // console.log('getRequestErrors ->', getRequestErrors)
+  // console.log('putRequestErrors ->', putRequestErrors)
 
   return (
     <>
-      {
-        plant && reviews ?
-          <>
-            <Container className='my-4'>
-              <Row>
-                <Col md={5} className='d-flex align-items-center p-4'>
-                  <Image src={plant.image} alt={plant.name} rounded fluid />
-                </Col>
-                <Col md={7} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h2 className='text-center mt-3 mb-4'>{plant.name}</h2>
-                  <div className='px-4'>
-                    <p>{plant.description}</p>
-                    <p><span className='font-weight-bold'>Height (cm):</span> {plant.height_in_cm}</p>
-                    <p><span className='font-weight-bold'>Light level:</span> {plant.light_level}</p>
-                    <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
-                    <p>£{plant.price_in_GBP}</p>
-                    <div className='d-flex justify-content-center'>
-                      {userIsAuthenticated() ?
-                        <>
-                          {!mustHavesButtonClicked ?
-                            <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
-                              Add to Must-Have Plants
-                            </Button>
-                            :
-                            <p className='font-weight-bold text-success'>Plant added to Must-Haves list!</p>
-                          }
-                        </>
-                        :
-                        <>
-                          {!mustHavesButtonClicked ?
-                            <Button onClick={handleNotLoggedInClickedMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
-                              Add to Must-Have Plants
-                            </Button>
-                            :
-                            <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
-                              <p style={{ margin: 0, textAlign: 'center' }}>You must be logged in to access this feature.</p>
-                              <p style={{ margin: 0, textAlign: 'center' }}>Please Register or Login via the links above ^^</p>
-                            </div>
-                          }
-                        </>
-                      }
+      {plant && reviews ?
+        <>
+          <Container className='my-4'>
+            <Row>
+              <Col md={5} className='d-flex align-items-center p-4'>
+                <Image src={plant.image} alt={plant.name} rounded fluid />
+              </Col>
+              <Col md={7} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                <h2 className='text-center mt-3 mb-4'>{plant.name}</h2>
+                <div className='px-4'>
+                  <p>{plant.description}</p>
+                  <p><span className='font-weight-bold'>Height (cm):</span> {plant.height_in_cm}</p>
+                  <p><span className='font-weight-bold'>Light level:</span> {plant.light_level}</p>
+                  <p><span className='font-weight-bold'>Watering:</span> {plant.watering_frequency}</p>
+                  <p>£{plant.price_in_GBP}</p>
+                  <div className='d-flex justify-content-center'>
+                    {userIsAuthenticated() ?
+                      <>
+                        {!mustHavesButtonClicked && !putRequestErrors ?
+                          <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                            Add to Must-Have Plants
+                          </Button>
+                          :
+                          <>
+                            {!putRequestErrors ?
+                              <p className='font-weight-bold text-success'>Plant added to Must-Haves list!</p>
+                              :
+                              <p className='font-weight-bold text-danger'>Oops! Something went wrong.</p>
+                            }
+                          </>
+                        }
+                      </>
+                      :
+                      <>
+                        {!mustHavesButtonClicked ?
+                          <Button onClick={handleNotLoggedInClickedMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                            Add to Must-Have Plants
+                          </Button>
+                          :
+                          <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
+                            <p style={{ margin: 0, textAlign: 'center' }}>You must be logged in to access this feature.</p>
+                            <p style={{ margin: 0, textAlign: 'center' }}>Please Register or Login via the links above ^^</p>
+                          </div>
+                        }
+                      </>
+                    }
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+          <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h2 className="text-center mb-4">Reviews</h2>
+            {reviews.length > 0 ?
+              <>
+                {reviews.map(review => {
+                  return (
+                    <div key={review.id} style={{ margin: '0 5vw', width: '60%' }}>
+                      <Row>
+                        <Col md={7}>
+                          <p className='font-weight-bold'>{review.review_owner.username}</p>
+                        </Col>
+                        <Col md={4}>
+                          <p className='font-weight-bold'>Rating: {review.rating}/5</p>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col>
+                          <div>{review.comment}<br />
+                            <>
+                              {token && (parseInt(loggedInUserId) === review.review_owner.id) ?
+                                <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
+                                :
+                                <div style={{ marginBottom: '1.8rem' }}></div>
+                              }
+                            </>
+                          </div>
+                        </Col>
+                      </Row>
                     </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-            <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <h2 className="text-center mb-4">Reviews</h2>
-              {reviews.length > 0 ?
-                <>
-                  {reviews.map(review => {
-                    return (
-                      <div key={review.id} style={{ margin: '0 5vw', width: '60%' }}>
-                        <Row>
-                          <Col md={7}>
-                            <p className='font-weight-bold'>{review.review_owner.username}</p>
-                          </Col>
-                          <Col md={4}>
-                            <p className='font-weight-bold'>Rating: {review.rating}/5</p>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col>
-                            <div>{review.comment}<br />
-                              <>
-                                {token && (parseInt(loggedInUserId) === review.review_owner.id) ?
-                                  <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
-                                  :
-                                  <div style={{ marginBottom: '1.8rem' }}></div>
-                                }
-                              </>
-                            </div>
-                          </Col>
-                        </Row>
-                      </div>
-                    )
-                  })}
-                </>
-                :
-                <Col className='p-4'>
-                  <div className='text-center'>There are no reviews available for this plant.</div>
-                </Col>
-              }
-            </Container >
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
-              {userIsAuthenticated() ?
-                <>
-                  <h3 className="text-center mb-4 mt-2">Leave a review</h3>
-                  <div style={{ width: '50%' }}>
-                    <Form onSubmit={handleReviewSubmit}>
+                  )
+                })}
+              </>
+              :
+              <Col className='p-4'>
+                <div className='text-center'>There are no reviews available for this plant.</div>
+              </Col>
+            }
+          </Container >
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '50px' }}>
+            {userIsAuthenticated() ?
+              <>
+                <h3 className="text-center mb-4 mt-2">Leave a review</h3>
+                <div style={{ width: '50%' }}>
+                  <Form onSubmit={handleReviewSubmit}>
 
-                      <Form.Group className='mb-3' controlId='formUsername'>
-                        <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
-                        <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
-                        <Form.Text className='text-danger'>
-                          {reviewPostRequestErrors.rating ? reviewPostRequestErrors.rating[0] : ''}
-                        </Form.Text>
-                      </Form.Group>
+                    <Form.Group className='mb-3' controlId='formUsername'>
+                      <Form.Label className='font-weight-bold'>Rating (out of 5)</Form.Label>
+                      <Form.Control style={{ width: '70px' }} type='number' name='rating' value={reviewFormData.rating} onChange={handleChange} />
+                      <Form.Text className='text-danger'>
+                        {reviewPostRequestErrors.rating ? reviewPostRequestErrors.rating[0] : ''}
+                      </Form.Text>
+                    </Form.Group>
 
-                      <Form.Group className='mb-3' controlId='formPassword'>
-                        <Form.Label className='font-weight-bold'>Comment</Form.Label>
-                        <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
-                        <Form.Text className='text-danger'>
-                          {reviewPostRequestErrors.comment ? reviewPostRequestErrors.comment[0] : ''}
-                        </Form.Text>
-                      </Form.Group>
+                    <Form.Group className='mb-3' controlId='formPassword'>
+                      <Form.Label className='font-weight-bold'>Comment</Form.Label>
+                      <Form.Control type='text' placeholder='Write comment here' name='comment' value={reviewFormData.comment} onChange={handleChange} />
+                      <Form.Text className='text-danger'>
+                        {reviewPostRequestErrors.comment ? reviewPostRequestErrors.comment[0] : ''}
+                      </Form.Text>
+                    </Form.Group>
 
-                      <div className='d-flex justify-content-center'>
-                        <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
-                          Submit Review
-                        </Button>
-                      </div>
-                    </Form>
-                  </div>
-                </>
-                :
-                <div></div>
-              }
-            </div>
-          </>
-          :
-          <div>Loading... / Error</div>
+                    <div className='d-flex justify-content-center'>
+                      <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
+                        Submit Review
+                      </Button>
+                    </div>
+                  </Form>
+                </div>
+              </>
+              :
+              <div></div>
+            }
+          </div>
+        </>
+        :
+        <>
+          {
+            getRequestErrors ?
+              <Container className='my-5'>
+                < Row >
+                  <Col>
+                    <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Oops! Something went wrong... <br /> Please refresh the page or try another link</h1>
+                  </Col>
+                </Row>
+              </Container >
+              :
+              <Container className='my-4'>
+                <Row>
+                  <Col>
+                    <h1 style={{ fontSize: '1.6rem' }} className="text-center mb-4 mt-2">Loading...</h1>
+                  </Col>
+                </Row>
+              </Container>
+          }
+        </>
       }
     </>
   )
