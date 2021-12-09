@@ -34,7 +34,7 @@ const Community = () => {
               </p>
             </Container>
           </div>
-          <Container className='mt-5' fluid>
+          <Container className='my-5' fluid>
             <Row xl='4' lg='3' md='3' sm='2' style={{ marginLeft: '15vw', marginRight: '15vw' }}>
               {users.map(user => {
                 return (
