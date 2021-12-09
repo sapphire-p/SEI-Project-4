@@ -1,0 +1,132 @@
+[
+{
+  "model": "reviews.review",
+  "pk": 30,
+  "fields": {
+    "rating": 5,
+    "comment": "Such a cute lil plant baby!",
+    "plant": 7,
+    "review_owner": 19
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 32,
+  "fields": {
+    "rating": 2,
+    "comment": "Was really de-hydrated when it arrived. Not sure it'll survive the year.",
+    "plant": 18,
+    "review_owner": 21
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 33,
+  "fields": {
+    "rating": 4,
+    "comment": "Colour looked brighter on the website but otherwise it's in a really good condition",
+    "plant": 10,
+    "review_owner": 22
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 34,
+  "fields": {
+    "rating": 1,
+    "comment": "Quite a temperamental plant! Kind of wish I'd gone for something a little easier to look after",
+    "plant": 8,
+    "review_owner": 22
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 35,
+  "fields": {
+    "rating": 4,
+    "comment": "This was the perfect plant pick for me - I'm often away for work but luckily it only needs watering about once every two weeks",
+    "plant": 11,
+    "review_owner": 23
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 36,
+  "fields": {
+    "rating": 4,
+    "comment": "Bought this for my sister and she's given it pride of place on her mantlepiece - that's a stamp of approval!",
+    "plant": 18,
+    "review_owner": 23
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 37,
+  "fields": {
+    "rating": 2,
+    "comment": "Made the mistake of placing this plant in direct sunlight and it lost its vibrant colour a little. Have moved into a shadier spot so hoping it gets better",
+    "plant": 13,
+    "review_owner": 24
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 38,
+  "fields": {
+    "rating": 5,
+    "comment": "Thriving in my bathroom!",
+    "plant": 12,
+    "review_owner": 25
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 39,
+  "fields": {
+    "rating": 0,
+    "comment": "Leaves were damaged when it arrived",
+    "plant": 19,
+    "review_owner": 26
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 40,
+  "fields": {
+    "rating": 5,
+    "comment": "I've received multiple compliments on this since popping it on my office desk! Might even buy another for my kitchen at home!",
+    "plant": 16,
+    "review_owner": 27
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 41,
+  "fields": {
+    "rating": 5,
+    "comment": "Was worried my room would be a bit dark but so far this thing is THRIVING!",
+    "plant": 10,
+    "review_owner": 27
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 42,
+  "fields": {
+    "rating": 5,
+    "comment": "OMG this little fellow honestly brightens my day! I'm so happy with my purchase - thank you!",
+    "plant": 13,
+    "review_owner": 28
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 43,
+  "fields": {
+    "rating": 3,
+    "comment": "So great to know it's cat-friendly and adds some colour to my living room",
+    "plant": 14,
+    "review_owner": 29
+  }
+}
+]

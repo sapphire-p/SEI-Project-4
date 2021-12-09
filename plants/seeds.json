@@ -1,0 +1,236 @@
+[
+{
+  "model": "plants.plant",
+  "pk": 6,
+  "fields": {
+    "name": "Devil's Ivy",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041248/The-Potting-Shed/devils-ivy_vyfcjns9wtxxs9qe2rfw_aqlpgi.jpg",
+    "description": "Found in south-east Asian forests, devil's ivy grows on tree trunks, often in shade. This means that this evergreen vine manages in most light conditions when indoors. It requires infrequent watering and appreciates a little liquid fertiliser each month in the warmer months. It's a perfect beginner's plant!",
+    "height_in_cm": "40",
+    "light_level": "Low",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "15.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 7,
+  "fields": {
+    "name": "Aloe Vera Paradise",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041469/The-Potting-Shed/aloe-vera-paradise_f4zuq0vinigdktcbrpms_jlh2do.jpg",
+    "description": "A popular houseplant for many years, Aloe Vera is super easy to care for! This plant grows in several continents in hot and dry conditions. Its leaves store water and it can grow as wide as a metre. Pop this fellow near a window and it'll let you know if it needs water when its leaves go floppy.",
+    "height_in_cm": "15",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "8.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 8,
+  "fields": {
+    "name": "Dracaena Fragrans",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041562/The-Potting-Shed/dracaena-fragrans_umkumdgarpnh4pjj44nb_re0oie.jpg",
+    "description": "Otherwise known as the 'corn plant', this plant grows slowly but can eventually reach 15 metres in height. A common plant across Africa, it'll need plenty of light and occasional liquid fertiliser if you want it to grow in the summer months. If healthy, it'll produce fragrant flowers and small fruit.",
+    "height_in_cm": "70",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "35.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 9,
+  "fields": {
+    "name": "Parlour Palm",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041673/The-Potting-Shed/parlour-palm_chamaedorea-9f7e79_sdd0l3.jpg",
+    "description": "While the Parlour Palm grows in the wild in Mexico and Guatemala, it's been a popular indoor plant for a long time. In the Victorian era, displaying this beautiful palm in your parlour would show just how sophisticated you were! This fellow is easy to care for with low light and infrequent watering. They are very slow to grow but you could it on its way with fertiliser once a month in the summer.",
+    "height_in_cm": "60",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "15.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 10,
+  "fields": {
+    "name": "Ficus Belize",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041761/The-Potting-Shed/ficus-belize_kmngf5xyybmfudxzforb_malfct.jpg",
+    "description": "This fellow is part of the rubber plant family and is sure to make a statement in your home! With its thick green, cream and pink leaves, this variety was specially bred to look great. It grows natively in Asia and can reach 60 metres tall. In your home, it will appreciate a bright spot and regular misting to keep things humid.",
+    "height_in_cm": "90",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "70.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 11,
+  "fields": {
+    "name": "Peace Lily",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041850/The-Potting-Shed/peace-lily_peace-lily-1530c2_cm7rxi.jpg",
+    "description": "Found in the wild in South and Central America, the peace lily is at home in tropical rainforests. As a result, it can cope in low light and needs humidity (but light watering). It is likely to flower in spring and purifies the air - what more could you ask for?",
+    "height_in_cm": "80",
+    "light_level": "Low",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "20.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 12,
+  "fields": {
+    "name": "Calathea Whitestar",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639041952/The-Potting-Shed/calathea-whitestar_bbvfoarujokikrjsyhwu_ltsrgf.jpg",
+    "description": "With its white, green and pink leaves, this Calathea loves indirect light, as well as humidity. Nicknamed the 'prayer plant', it's native to the Brazilian rainforests, under the canopy of tropical trees. There are around 200 species of this plant in the wild, but your houseplant will do brilliantly in the bathroom!",
+    "height_in_cm": "90",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "38.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 13,
+  "fields": {
+    "name": "Satin Pothos",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042051/The-Potting-Shed/satin-pothos_p4kvj0amto9wwtqkh4kv_lpsapy.jpg",
+    "description": "Leaves of speckled silver and a tendency to dangle, this plant looks great on a mantlepiece or shelf. Native to countries such as Thailand, Borneo and the Philippines, it either winds its way up tall trees or spreads along the ground. It's a great option if your home doesn't get much natural light, though you can give it an extra boost in spring and summer with liquid fertiliser.",
+    "height_in_cm": "40",
+    "light_level": "Low",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "15.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 14,
+  "fields": {
+    "name": "Bird of Paradise",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042120/The-Potting-Shed/bird-of-paradise_oaxybdarjkuiodskfyk4_xdi9sq.jpg",
+    "description": "This showstopper of a plant produces flowers that look just a little like birds! Growing in the wild in South Africa, it is pollinated by birds, not insects, and can grow up to 4 metres tall. Indoors in the UK, it'll need plenty of room to grow and bright light. You could even pop it outside in the warmer months.",
+    "height_in_cm": "170",
+    "light_level": "High",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "220.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 15,
+  "fields": {
+    "name": "Euphorbia",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042220/The-Potting-Shed/euphorbia_lik3qkgcqhzjc5vk3szm_jsvllt.jpg",
+    "description": "Native to the scrublands of Southern Africa, the Euphorbia can grow almost 10 metres tall in the wild and soaks up the sun with a passion! Despite appearances, it's not a cactus but needs similar conditions - plenty of light and not a whole lot of water. Please note that the Euphorbia's sap is poisonous - it can cause a skin rash and is highly toxic if consumed.",
+    "height_in_cm": "90",
+    "light_level": "High",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "70.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 16,
+  "fields": {
+    "name": "Clusia Princess",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042286/The-Potting-Shed/clusia-princess_q4zntbmrpoh512klzumr_iab5g7.jpg",
+    "description": "This plant is native to countries such as the Bahamas, Cuba and Puerto Rico, where it starts life attached to another tree. As it grows, its roots eventually wrap around the tree and usurps its place in the ground - pretty intense! However, inside your home it's easy to care for and grows in most light conditions.",
+    "height_in_cm": "30",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "8.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 17,
+  "fields": {
+    "name": "Cycad",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042372/The-Potting-Shed/cycad_dyxu98k4rgkl7fo2hslc_bs6fmf.jpg",
+    "description": "The Cycad grows in the wild in several tropical areas - from Australia to Central America, through to the east side of Africa. Plants from the Cycad family were growing over 250 million years ago - hanging out with the dinosaurs! It grows well indoors - requiring dry soil and humid air.",
+    "height_in_cm": "70",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "28.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 18,
+  "fields": {
+    "name": "Monstera Adansonii",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042455/The-Potting-Shed/monstera-adansonii_efhhdjgblyuxisqfpkad_fms5kb.jpg",
+    "description": "The Cycad grows in the wild in several tropical areas - from Australia to Central America, through to the east side of Africa. Plants from the Cycad family were growing over 250 million years ago - hanging out with the dinosaurs! It grows well indoors - requiring dry soil and humid air.",
+    "height_in_cm": "30",
+    "light_level": "Medium",
+    "watering_frequency": "Moderate watering",
+    "price_in_GBP": "15.50"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 19,
+  "fields": {
+    "name": "Licuala Grandis",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639042527/The-Potting-Shed/licuala-grandis_rtezqcxrtllj8rtla6ca_q7wtp4.jpg",
+    "description": "Look at those lovely fan-shaped leaves! This Licuala originates from the hot and humid forests of the island of Vanuatu, where its leaves can grow to one metre across. As a houseplant, it's reasonably easygoing - it'll apprecaite bright but not direct light, and some light misting.",
+    "height_in_cm": "110",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - when soil is dry",
+    "price_in_GBP": "120.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 20,
+  "fields": {
+    "name": "Kentia Palm",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639061408/The-Potting-Shed/kentia-palm_ftcc38bksuyxcin6vvs8_jngo4r.jpg",
+    "description": "A popular houseplant that requires bright light conditions, but should be kept out of direct sunlight. Misting the leaves will keep them looking fresh and green, and it may also thrive when fed with a liquid fertiliser once a month.",
+    "height_in_cm": "120",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "50.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 21,
+  "fields": {
+    "name": "Strelitzia Nicolai",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639061428/The-Potting-Shed/strelitzia-nicolai_xbrpuv8hnjzgalgdl0ty_uexvx5.jpg",
+    "description": "The leaves of Strelitzia Nicolai, also known as the 'Wild Banana' plant, are strikingly similar to those of a banana tree, but don't be fooled - this plant will not bear the bendy yellow fruit! In the height of summer this plant can be placed outside, but will need to be introduced to bright sunlight gradually.",
+    "height_in_cm": "150",
+    "light_level": "High",
+    "watering_frequency": "Frequent watering",
+    "price_in_GBP": "50.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 22,
+  "fields": {
+    "name": "Fiddle-leaf Fig",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639061449/The-Potting-Shed/fiddle-leaf-fig_huiaadeuevribawhsikn_hqu6cu.jpg",
+    "description": "This plant is named after its fiddle-shaped leaves and can grow very tall - over six-feet in some instances! The leaves are large, striking and tactile, but don't be worried if one or two fall off occasionally, especially during the winter months.",
+    "height_in_cm": "100",
+    "light_level": "Medium",
+    "watering_frequency": "Light watering - once a week",
+    "price_in_GBP": "40.00"
+  }
+},
+{
+  "model": "plants.plant",
+  "pk": 23,
+  "fields": {
+    "name": "Alocasia Stingray",
+    "image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639061468/The-Potting-Shed/alocasia-stingray_okpfcqawz8j6razsm20s_fxraa6.jpg",
+    "description": "With its unusual spikey appearance, its not difficult to see why this exciting was named after the stingray fish. It grows natively in humid forests in Asia and therefore requires a lot of watering. Treat it to a liquid fertiliser feed once a month to stay on its good side.",
+    "height_in_cm": "40",
+    "light_level": "Medium",
+    "watering_frequency": "Frequent watering",
+    "price_in_GBP": "15.00"
+  }
+}
+]

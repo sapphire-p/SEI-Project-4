@@ -120,12 +120,16 @@ const Profile = () => {
                       <p style={{ margin: 0, textAlign: 'center' }}>Click the &apos;Add to Must-Have Plants&apos; button on a plant page to add it</p>
                     </div>
                   }
-                  <div style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <Button onClick={handleDeleteProfile} variant='primary' type='submit' className='bg-danger mt-1 my-3' style={{ width: '50%', borderStyle: 'none' }}>
-                      Delete My Profile<br />
-                      Please note: this cannot be reversed
-                    </Button>
-                  </div>
+                  {userLoggedIn !== '1' ?
+                    <div style={{ textAlign: 'center', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <Button onClick={handleDeleteProfile} variant='primary' type='submit' className='bg-danger mt-1 my-3' style={{ width: '50%', borderStyle: 'none' }}>
+                        Delete My Profile<br />
+                        Please note: this cannot be reversed
+                      </Button>
+                    </div>
+                    :
+                    <div></div>
+                  }
                 </>
                 :
                 <>

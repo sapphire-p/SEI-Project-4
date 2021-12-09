@@ -1,0 +1,478 @@
+[
+  {
+    "model": "jwt_auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$K8CtsQgWByGdOymq3BP15F$d74w0yWdPDYLof7oYgniouxNVEi6C0N3e3ZOq6DmUNY=",
+      "last_login": "2021-12-02T20:28:01.887Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "email": "the-potting-shed@email.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2021-12-02T16:39:01.366Z",
+      "username": "the-potting-shed",
+      "profile_image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,h_300,r_max,w_300/v1638451738/The-Potting-Shed/robin-mathlener-8x3wjKJL_yE-unsplash_edit_eadnep.jpg",
+      "three_word_bio": "Hi there everyone!",
+      "about_me": "Welcome to The Potting Shed - home of houseplants and pot plant people!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": []
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$zgyJcKonbhmBbeWSqb2ER2$9VgUTqV3V/IQEnvKSFE3GXn5aFgMM7XkjuITqs0s8Bg=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "henry@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-05T10:21:31.113Z",
+      "username": "Henry",
+      "profile_image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,g_face,h_300,r_max,w_300/v1638699342/The-Potting-Shed/ludovic-migneault-4uj3iZ5m084-unsplash_bipzvi.jpg",
+      "three_word_bio": "Novice plant dad",
+      "about_me": "I'm a London-based solicitor and pretty new to this whole pot plants thing! I have mixed success in keeping them alive… Looking for tips and inspiration as I continue to grow my houseplants and learn about new species.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        18,
+        16,
+        20,
+        22
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$EMlJzVJ9f4K8AkoPBAxpUE$9XyAIWOkPz748iCnike2i0uNPA+sHzUwyCsOZADFjUk=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "misha@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-06T12:03:23.780Z",
+      "username": "Misha",
+      "profile_image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,g_face,h_300,r_max,w_300/v1638791975/The-Potting-Shed/musta-egIdoiJ1xm0-unsplash_jxwrat.jpg",
+      "three_word_bio": "Slowly surely improving",
+      "about_me": "Okay, I've killed three 'hardy' plants in the past year but my latest finds are flourishing so far! Slowly getting better at plant-growing!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        15,
+        7,
+        17,
+        13,
+        9
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$UtoafMGZhcUeu8UyoWsTDk$Y6RjaivsKFP+m0AKXpyXqfeFOInv4WIE774qTON6WVw=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "daisyjackson@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-07T09:47:04.397Z",
+      "username": "DaisyJackson",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1638870234/The-Potting-Shed/inhswnjgrzy0cq9xo7ni.jpg",
+      "three_word_bio": "Daisy by name",
+      "about_me": "I'm not called Daisy for nothing! Have been obsessed with gardening since I was born and I love plants of all kinds.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": []
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 16,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$sqvva0yBXQfU1CBU6FMKvp$qvfMjrTFrcTaImO6bpPPV/3AabZ+pVqp0Np3fzY2/+0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "chloecheung@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T13:24:38.520Z",
+      "username": "Chloe.Cheung",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639056254/The-Potting-Shed/kt2eqcpjjjnhonk53mkg.jpg",
+      "three_word_bio": "Interior Design Lover",
+      "about_me": "Training in interior design and looking to expand my plant decor knowledge - especially interested in palm plants and how these can be used to enhance a room.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        9,
+        20
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$pnAPXyBDlkjuBDcALKrgeV$R2n0yMMSvx/oy3wcQ8+Txk/dsU1XNkOZQfwjtEXwKF0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "thomas93@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T13:53:15.804Z",
+      "username": "thomas93",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639057989/The-Potting-Shed/xcufyietyznxcjywcezz.jpg",
+      "three_word_bio": "Happy plant nerd",
+      "about_me": "I'm an amateur botanist - started out interested in decorating my tiny flat and now want to learn more about the science of plants. Take pride in learning something new each and every day",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        13,
+        12,
+        15
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 18,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$CrMzNQ33akGBaNl8YTBjSY$MYKYXUhvzIKLGxW112Y1pVA2I+axEU2XVxX+qFFDuzo=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "hippyatheart@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T13:55:11.882Z",
+      "username": "hippyatheart",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639058103/The-Potting-Shed/uxv17edvmzmbplf08sm9.jpg",
+      "three_word_bio": "Green fingered gardener",
+      "about_me": "Former lawyer - making the most of my retirement by gardening, sailing and painting (mostly pictures of my garden!)",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        14,
+        8,
+        11,
+        17,
+        22
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 19,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$n5M7NPUFwYGH3MVPjxnhIA$x7J9kUzFcftc9OR1g6gt3o0rhv//VxmQSlMWVfSw8LU=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "sunnyday@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T13:57:29.927Z",
+      "username": "sunnyday",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639058244/The-Potting-Shed/x59hfdpm6jzmnoqphkmm.jpg",
+      "three_word_bio": "Caring and calming",
+      "about_me": "Might sound cliche but I find that my houseplants really lift my mood! I've definitely had my ups and downs but caring for my plants always calms my mind. Always looking for more opportunities to improve my wellbeing.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        6,
+        7,
+        11,
+        19
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 20,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$Nrw42xqBBq2BdfaBKhemmG$cVStGNmpORCBuzlS4RJkE6B4BzSS48bosixZczfThMA=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "kwameb@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:03:02.869Z",
+      "username": "KwameB",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639058573/The-Potting-Shed/kuuu8tbqjz1kcyk7juzg.jpg",
+      "three_word_bio": "For My Seedlings",
+      "about_me": "Dad of two budding gardeners. They're messy little sprouts but we're all growing - in more ways than one! It's an amazing feeling to see their hard work pay off.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        13,
+        15,
+        16,
+        17,
+        19,
+        21
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 21,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$RbvSpG59FUVLJlfNpoheGP$iUUPGEtGp5jd9ce17gkh2Nco0Rx+T50PLFnTIa00JBo=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "zuzu@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:05:53.130Z",
+      "username": "Zuzu",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639058746/The-Potting-Shed/gp9ehdb0vi1khqbitz0a.jpg",
+      "three_word_bio": "Green desk jockey",
+      "about_me": "I work from home and spend 8 hours a day at my desk, so I'm trying to make it a happy place to be! Feel so much better when surrounded by greenery!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        6,
+        23
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 22,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$arQ5NHEN3cPika60AZ6A2k$Fs9taeLe03Cu5D0i2vF8WM76oUfmqgqWP2UNAXa4GGE=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "kieran@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:10:25.504Z",
+      "username": "kieran",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639058996/The-Potting-Shed/prixjw2eccwhvkzhkr4d.jpg",
+      "three_word_bio": "Super shrubbery snaps",
+      "about_me": "Photographer with a passion for greenery. Check out my Instagram for a glimpse of my new project - super close-up photos of plants that are indigenous to my home country of Australia",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        14,
+        11,
+        12,
+        19,
+        9,
+        20,
+        21,
+        22
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 23,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$UInaHKbyi40MkYNksmTbSA$MMg+MA4lbYlXkSNDoCL+gHf+I3EXpOVHpNCvR0+XqQU=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "bloombuddy@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:18:03.044Z",
+      "username": "bloombuddy",
+      "profile_image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,h_300,r_max,w_300/v1638451738/The-Potting-Shed/robin-mathlener-8x3wjKJL_yE-unsplash_edit_eadnep.jpg",
+      "three_word_bio": "Tropics Up North",
+      "about_me": "Artist from Cumbria. Things are wild and breezy where I live, but I've created a tropical paradise inside my house! I love anything with big leaves, bright colours and fresh scents.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        14,
+        10,
+        22
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 24,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$llcHhq7SRlSL21zqAM0UOa$YQRbL4Lz/QfV+/Z/cPYIj0QuKDZZCJkGbJk4StH2sJ0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "saha@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:21:51.304Z",
+      "username": "Saha",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639059701/The-Potting-Shed/a513h9gk1ns7m3utmfwm.jpg",
+      "three_word_bio": "Busy bumble bee",
+      "about_me": "My life is hectic to say the least, so I'm looking for plants that are super easy to care for and that will stay healthy with minimal effort. Oh and that look cute of course!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        6,
+        16
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 25,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$daAXlVVaYPM9UlFKkU6NCw$DEqJY+zcKQO2jK9OVTTifbmSGAtNxvo5aRie003WvuY=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "valerie@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:24:37.397Z",
+      "username": "Valerie",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639059872/The-Potting-Shed/j64zv0pa1efbo4uwcrcn.jpg",
+      "three_word_bio": "Gift giver gal",
+      "about_me": "Always on the look out for great gifts for my friends! So many of them are super into their plants and I keep a few myself :)",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        12,
+        17,
+        10,
+        19,
+        7
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 26,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$SIMo2bWGjVaYtd6gn3TCxx$yCPMNwDA+RpD/iCHOlIX6mixYtBHRwCgwF7DFVh3Vu8=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "ishaan32@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:27:49.270Z",
+      "username": "Ishaan32",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639060066/The-Potting-Shed/riadthtooejslhhyi1ub.jpg",
+      "three_word_bio": "Clean living lover",
+      "about_me": "I live in London and want my home to be a sanctuary from all the air pollution that's about! I read that plants can purify air and would love to find out more",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        21,
+        9
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 27,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$A6uWNKBhRtjv4ztm7tE0Zx$F/2lZKTjjOjWShHti6eSlXZXZWC6JBl8QNdn8BZL2AI=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "jacob.george@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:31:07.409Z",
+      "username": "Jacob.George",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639060263/The-Potting-Shed/k84z1avvb2csozfvuzyy.jpg",
+      "three_word_bio": "Office manager extraordinaire",
+      "about_me": "Office manager for a growing start-up. We've just moved into new premises so I'm looking for classy, hardy plants to decorate our space!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        13,
+        7,
+        8,
+        23,
+        16,
+        6,
+        15,
+        18
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 28,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$uHrz6zsdS452LyiTTy1fw3$F8XyEUWyNmDW914sBDG9PHr1OCENMhoLgxpoq105AFM=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "tamara@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:35:08.778Z",
+      "username": "Tamara",
+      "profile_image": "http://res.cloudinary.com/dfgnpqkiv/image/upload/v1639060495/The-Potting-Shed/o1yqdlcerm1271onz1ou.jpg",
+      "three_word_bio": "Best housemate ever",
+      "about_me": "Let's just say, my housemates aren't the best at making our place feel like a home! So I've made it my mission to give our place a makeover. It's gonna be bangin!",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": [
+        14,
+        13,
+        19,
+        15,
+        11,
+        23
+      ]
+    }
+  },
+  {
+    "model": "jwt_auth.user",
+    "pk": 29,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$VB0VKulgCuJYAndKBIfGNk$+S2+krt2avpKkNv20zqTm1urxMHxRVnN31HMm/xvH5I=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "email": "veronika@email.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2021-12-09T14:38:36.036Z",
+      "username": "Veronika",
+      "profile_image": "https://res.cloudinary.com/dfgnpqkiv/image/upload/c_fill,h_300,r_max,w_300/v1638451738/The-Potting-Shed/robin-mathlener-8x3wjKJL_yE-unsplash_edit_eadnep.jpg",
+      "three_word_bio": "Cats and plants!",
+      "about_me": "Cat mum to 3 kitties: Mittens, Coco and Pixie. Looking for pet-friendly plants to brighten up my room.",
+      "groups": [],
+      "user_permissions": [],
+      "must_have_plants": []
+    }
+  }
+]
