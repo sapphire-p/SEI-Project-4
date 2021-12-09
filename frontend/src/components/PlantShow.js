@@ -17,6 +17,7 @@ const PlantShow = () => {
   const { id } = useParams()
   const [getRequestErrors, setGetRequestErrors] = useState(false)
   const [putRequestErrors, setPutRequestErrors] = useState(false)
+  const [deleteRequestErrors, setDeleteRequestErrors] = useState(false)
   const [mustHavesButtonClicked, setMustHavesButtonClicked] = useState(false)
   const [reviewPostedDataResponse, setReviewPostedDataResponse] = useState(false)
   const [numberOfReviewsDeleted, setNumberOfReviewsDeleted] = useState(0)
@@ -95,13 +96,11 @@ const PlantShow = () => {
       )
       setReviewPostedDataResponse(data)
     } catch (err) {
-      console.log(err)
       setReviewPostRequestErrors(err.response.data)
     }
   }
 
   const handleDeleteReview = async (reviewId) => {
-    console.log('reviewId ->', reviewId)
     try {
       await axios.delete(
         `/api/reviews/${reviewId}/`,
@@ -109,23 +108,10 @@ const PlantShow = () => {
       )
       setNumberOfReviewsDeleted(numberOfReviewsDeleted + 1)
     } catch (err) {
-      console.log(err)
+      setDeleteRequestErrors(true)
     }
   }
 
-  // console.log('plant.id ->', plant.id)
-  // console.log(reviews)
-  // console.log('loggedInUserId ->', loggedInUserId)
-  // console.log('token ->', token)
-  // console.log('mustHavesButtonClicked ->', mustHavesButtonClicked)
-
-  // console.log('reviewPostRequestErrors ->', reviewPostRequestErrors)
-  // console.log('reviewFormData ->', reviewFormData)
-  // console.log('reviewPostedDataResponse ->', reviewPostedDataResponse)
-  // console.log('numberOfReviewsDeleted ->', numberOfReviewsDeleted)
-
-  // console.log('getRequestErrors ->', getRequestErrors)
-  // console.log('putRequestErrors ->', putRequestErrors)
 
   return (
     <>
@@ -148,7 +134,7 @@ const PlantShow = () => {
                     {userIsAuthenticated() ?
                       <>
                         {!mustHavesButtonClicked && !putRequestErrors ?
-                          <Button onClick={handleMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                          <Button onClick={handleMustHave} variant='primary' type='button' className='bg-success mt-1 mb-3' style={{ width: '100%', borderStyle: 'none' }}>
                             Add to Must-Have Plants
                           </Button>
                           :
@@ -164,7 +150,7 @@ const PlantShow = () => {
                       :
                       <>
                         {!mustHavesButtonClicked ?
-                          <Button onClick={handleNotLoggedInClickedMustHave} variant='primary' type='button' className='mt-1 mb-3' style={{ width: '100%' }}>
+                          <Button onClick={handleNotLoggedInClickedMustHave} variant='primary' type='button' className='bg-success mt-1 mb-3' style={{ width: '100%', borderStyle: 'none' }}>
                             Add to Must-Have Plants
                           </Button>
                           :
@@ -200,7 +186,10 @@ const PlantShow = () => {
                           <div>{review.comment}<br />
                             <>
                               {token && (parseInt(loggedInUserId) === review.review_owner.id) ?
-                                <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
+                                <>
+                                  <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
+                                  {deleteRequestErrors && <div className='text-danger'>Oops! Something went wrong</div>}
+                                </>
                                 :
                                 <div style={{ marginBottom: '1.8rem' }}></div>
                               }
@@ -242,7 +231,7 @@ const PlantShow = () => {
                     </Form.Group>
 
                     <div className='d-flex justify-content-center'>
-                      <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
+                      <Button variant='primary' type='submit' className='bg-success mt-1 mb-3' style={{ width: '100%', borderStyle: 'none' }}>
                         Submit Review
                       </Button>
                     </div>

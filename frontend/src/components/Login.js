@@ -48,7 +48,7 @@ const Login = () => {
 
 
   return (
-    <Container style={{ width: '50%', minWidth: '500px' }}>
+    <Container style={{ width: '50%', minWidth: '490px' }}>
       <div className='m-5'>
         <h1 className='mb-5'>Login</h1>
         <Form onSubmit={handleSubmit}>
@@ -65,7 +65,7 @@ const Login = () => {
           </Form.Group>
 
           <div className='d-flex justify-content-center'>
-            <Button variant='primary' type='submit' className='mt-1 mb-3' style={{ width: '100%' }}>
+            <Button variant='primary' type='submit' className='bg-success mt-1 mb-3' style={{ width: '100%', borderStyle: 'none' }}>
               Submit
             </Button>
           </div>
