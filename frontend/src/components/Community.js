@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import axios from 'axios'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
@@ -34,12 +34,13 @@ const Community = () => {
               </p>
             </Container>
           </div>
-          <Container>
-            <div id="custom-card-columns-community" className="card-columns">
+          <Container fluid>
+            {/* <div id="custom-card-columns-community" className="card-columns"> */}
+            <Row xl='4' lg='3' md='3' sm='2' style={{ marginLeft: '15vw', marginRight: '15vw' }}>
               {users.map(user => {
                 return (
-                  <div key={user.id}>
-                    <Card style={{ borderStyle: 'none', minHeight: '31vh' }} >
+                  <div key={user.id} style={{ padding: '1rem' }}>
+                    <Card style={{ borderStyle: 'none' }} >
                       <Link to={`/profile/${user.id}`}>
                         <Card.Img variant="top" src={user.profile_image} alt={user.username} />
                       </Link>
@@ -53,7 +54,8 @@ const Community = () => {
                   </div>
                 )
               })}
-            </div>
+            </Row>
+            {/* </div> */}
           </Container>
         </>
         :

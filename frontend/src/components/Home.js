@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
 import axios from 'axios'
 import PlantCard from './PlantCard'
 
@@ -34,16 +34,18 @@ const Home = () => {
               </p>
             </Container>
           </div>
-          <Container>
-            <div id="custom-card-columns" className="card-columns">
+          <Container fluid>
+            {/* <div id="custom-card-columns" className="card-columns"> */}
+            <Row lg='4' md='3' sm='2' style={{ marginLeft: '10vw', marginRight: '10vw' }}>
               {plants.map(plant => {
                 return (
-                  <div key={plant.id}>
+                  <div key={plant.id} style={{ padding: '1rem' }}>
                     <PlantCard {...plant} />
                   </div>
                 )
               })}
-            </div>
+            </Row>
+            {/* </div> */}
           </Container>
         </>
         :
