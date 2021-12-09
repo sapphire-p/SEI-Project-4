@@ -34,8 +34,7 @@ const Home = () => {
               </p>
             </Container>
           </div>
-          <Container fluid>
-            {/* <div id="custom-card-columns" className="card-columns"> */}
+          <Container className='mt-5' fluid>
             <Row lg='4' md='3' sm='2' style={{ marginLeft: '10vw', marginRight: '10vw' }}>
               {plants.map(plant => {
                 return (
@@ -45,7 +44,6 @@ const Home = () => {
                 )
               })}
             </Row>
-            {/* </div> */}
           </Container>
         </>
         :

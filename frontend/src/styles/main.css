@@ -1,16 +1,4 @@
-/* 
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
-} */
 
-/* .blue-title {
-  color: green;
-} */
 
 #hero {
   color: white;
@@ -36,41 +24,42 @@
 /* NB: Extra small devices (portrait phones, less than 576px) have no media query since this is the default in Bootstrap */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+
+/* @media (min-width: 576px) {
   #custom-card-columns {
       column-count: 1;
   }
   #custom-card-columns-community {
     column-count: 3;
 }
-}
+} */
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   #custom-card-columns {
       column-count: 4;
   }
   #custom-card-columns-community {
     column-count: 3;
 }
-}
+} */
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   #custom-card-columns {
       column-count: 4;
   }
   #custom-card-columns-community {
     column-count: 4;
 }
-}
+} */
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   #custom-card-columns {
       column-count: 4;
   }
   #custom-card-columns-community {
     column-count: 4;
 }
-}
+} */
