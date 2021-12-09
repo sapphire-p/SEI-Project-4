@@ -101,21 +101,21 @@ const Profile = () => {
                 <>
                   {mustHavePlants.length > 0 ?
                     <>
-                      <Container>
-                        <div id="custom-card-columns" className="card-columns py-3">
+                      <Container fluid>
+                        <Row lg='3' md='3' sm='1' style={{ marginLeft: '5vw', marginRight: '5vw' }}>
                           {mustHavePlants.map(plant => {
                             return (
-                              <div key={plant.id}>
+                              <div key={plant.id} style={{ padding: '1rem' }}>
                                 <PlantCard {...plant} />
                               </div>
                             )
                           })}
-                        </div>
+                        </Row>
                       </Container>
                       <h5 className='mb-4' style={{ textAlign: 'center' }}>Total cost: £{totalCost}</h5>
                     </>
                     :
-                    <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
+                    <div className='mb-3 d-flex flex-column align-items-center font-weight-bold text-success'>
                       <p style={{ margin: 0, textAlign: 'center' }}>Your basket is empty - no Must-Have Plants have been added :(</p>
                       <p style={{ margin: 0, textAlign: 'center' }}>Click the &apos;Add to Must-Have Plants&apos; button on a plant page to add it</p>
                     </div>
@@ -131,28 +131,24 @@ const Profile = () => {
                 <>
                   {mustHavePlants.length > 0 ?
                     <>
-                      <Container>
-                        <div id="custom-card-columns" className="card-columns py-3">
+                      <Container fluid>
+                        <Row lg='3' md='3' sm='1' style={{ marginLeft: '5vw', marginRight: '5vw' }}>
                           {mustHavePlants.map(plant => {
                             return (
-                              <div key={plant.id}>
+                              <div key={plant.id} style={{ padding: '1rem' }}>
                                 <Card>
                                   <Link to={`/plants/${plant.id}`}>
                                     <Card.Img variant="top" src={plant.image} alt={plant.name} />
                                   </Link>
                                   <Card.Body>
                                     <Card.Title style={{ margin: '0' }} className="text-center">{plant.name}</Card.Title>
-                                    {/* <Card.Text className="text-center">
-                                      £{plant.price_in_GBP}
-                                    </Card.Text> */}
                                   </Card.Body>
                                 </Card>
                               </div>
                             )
                           })}
-                        </div>
+                        </Row>
                       </Container>
-                      {/* <h5 className='mb-4' style={{ textAlign: 'center' }}>Total cost: £{totalCost}</h5> */}
                     </>
                     :
                     <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
