@@ -13,7 +13,7 @@ const PlantShow = () => {
   const [plant, setPlant] = useState(null)
   const [reviews, setReviews] = useState(null)
   const [loggedInUserId, setLoggedInUserId] = useState(null)
-  const [token, setToken] = useState()
+  const [token, setToken] = useState(null)
   const { id } = useParams()
   const [getRequestErrors, setGetRequestErrors] = useState(false)
   const [putRequestErrors, setPutRequestErrors] = useState(false)
@@ -194,7 +194,7 @@ const PlantShow = () => {
                           <Col>
                             <div>{review.comment}<br />
                               <>
-                                {parseInt(loggedInUserId) === review.review_owner.id ?
+                                {token && (parseInt(loggedInUserId) === review.review_owner.id) ?
                                   <button id='delete-review-button' onClick={() => handleDeleteReview(review.id)} style={{ marginBottom: '1.8rem' }}>Delete review</button>
                                   :
                                   <div style={{ marginBottom: '1.8rem' }}></div>
