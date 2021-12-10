@@ -156,7 +156,7 @@ const PlantShow = () => {
                           :
                           <div className='d-flex flex-column align-items-center font-weight-bold text-success'>
                             <p style={{ margin: 0, textAlign: 'center' }}>You must be logged in to access this feature.</p>
-                            <p style={{ margin: 0, textAlign: 'center' }}>Please Register or Login via the links above ^^</p>
+                            <p style={{ margin: 0, textAlign: 'center' }}>Please Login or click &apos;Register&apos; to create an account</p>
                           </div>
                         }
                       </>

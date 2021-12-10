@@ -2,6 +2,10 @@
   font-family: 'Readex Pro', sans-serif;
 }
 
+body {
+  overflow-y: scroll;
+}
+
 #hero {
   color: white;
   background-image:
@@ -11,6 +15,14 @@
   background-position: center;
 }
 
+#hero-auth {
+  color: white;
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+  url('https://res.cloudinary.com/dfgnpqkiv/image/upload/v1639132071/The-Potting-Shed/succulents_background_cropped_kb090m.jpg');
+  background-size: cover;
+  background-position: center;
+}
 
 #delete-review-button {
   background: none;
