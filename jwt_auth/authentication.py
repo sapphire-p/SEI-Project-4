@@ -1,7 +1,7 @@
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.exceptions import PermissionDenied
 from django.contrib.auth import get_user_model
-# should import the secret key (held in .env file, then hidden in .gitignore)
+# imports the secret key (held in .env file, then hidden in .gitignore) via config in settings:
 from django.conf import settings
 import jwt
 User = get_user_model()

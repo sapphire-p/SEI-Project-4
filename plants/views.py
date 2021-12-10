@@ -4,13 +4,6 @@ from rest_framework import status
 from .models import Plant
 from .serializers import PlantSerializer, PopulatedPlantSerializer
 
-# from rest_framework.exceptions import PermissionDenied
-# from datetime import datetime, timedelta
-# from django.contrib.auth import get_user_model
-# from django.conf import settings
-# import jwt
-# User = get_user_model()
-
 
 # ? For requests made to /plants/
 class PlantListView(APIView):

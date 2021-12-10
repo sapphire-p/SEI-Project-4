@@ -54,7 +54,6 @@ const Profile = () => {
 
 
   const handleDeleteProfile = async () => {
-    console.log('id of user ->', id)
     try {
       await axios.delete(
         `/api/users/${id}/`,

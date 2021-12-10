@@ -49,7 +49,6 @@ const PlantShow = () => {
         setPlant(data)
         setReviews(data.review_set)
       } catch (err) {
-        console.log(err)
         setGetRequestErrors(true)
       }
     }

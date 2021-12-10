@@ -104,15 +104,3 @@ class UserDetailView(APIView):
         except:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-# this has now been implemented in user detail view:
-
-# PUT request (self, request, pk (of user)) - pk of the user is taken from the url endpoint like params, JSON request body contains field e.g. "plant_id": "1"
-# plant = Plant.object.get(id=plant_id) #? Django ORM method to look up plant object by id
-# user = User.objects.get(id=pk) #? Django ORM method to look up user by id
-
-# Django many-to-many ORM command
-# ? Django ORM method to update the many-to-many association, i.e. add to the junction table between Users and Plants in the db
-# ? see: https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_many/
-# user.plants.add(plant)
-# user.save()

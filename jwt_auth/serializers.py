@@ -50,7 +50,6 @@ class UserSerializer(serializers.ModelSerializer):
 class NonRegistrationUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        # fields = '__all__'
         fields = (
             'id', 'username', 'email', 'profile_image', 'three_word_bio', 'about_me', 'must_have_plants'
         )

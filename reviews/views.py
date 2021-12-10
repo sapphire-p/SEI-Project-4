@@ -55,13 +55,3 @@ class ReviewDetailView(APIView):
         except:
             return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-# ? There is not a use case for GETting and returning a single review using its id number
-    # def get(self, request, pk):
-    #     try:
-    #         review = Review.objects.get(id=pk)
-    #     except:
-    #         return Response({'message': 'Review not found'}, status=status.HTTP_404_NOT_FOUND)
-    #     serialized_review = ReviewSerializer(review)
-    #     return Response(serialized_review.data, status=status.HTTP_200_OK)

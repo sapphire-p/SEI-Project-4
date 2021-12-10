@@ -3,7 +3,6 @@ import { useHistory, useLocation } from 'react-router-dom'
 import { getPayload, getUsernameFromLocalStorage, getUserIdFromLocalStorage } from './helpers/auth'
 import Navbar from 'react-bootstrap/Navbar'
 import { Nav } from 'react-bootstrap'
-// import Image from 'react-bootstrap/Image'
 
 
 const NavBar = () => {
@@ -28,8 +27,6 @@ const NavBar = () => {
     window.localStorage.removeItem('token') // remove token from local storage
     history.push('/') // redirect user to the home page
   }
-
-  // console.log(getUserIdFromLocalStorage())
 
 
   return (

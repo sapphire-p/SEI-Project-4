@@ -28,20 +28,3 @@ const App = () => {
 }
 
 export default App
-
-
-
-// ? What was originally in this file in the create-react-app template:
-// function App() {
-//   React.useEffect(() => {
-//     const getData = async () => {
-//       const res = await axios.get('/api/plants') // * <-- replace with your endpoint
-//       console.log(res.data)
-//     }
-//     getData()
-//   })
-
-//   return <h1>Hello World</h1>
-// }
-
-// export default App
