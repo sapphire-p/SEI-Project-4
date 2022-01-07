@@ -45,7 +45,7 @@ const PlantShow = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`/api/plants/${id}`)
+        const { data } = await axios.get(`/api/plants/${id}/`)
         setPlant(data)
         setReviews(data.review_set)
       } catch (err) {

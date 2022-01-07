@@ -13,7 +13,7 @@ const Community = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get('/api/users')
+        const { data } = await axios.get('/api/users/')
         setUsers(data)
       } catch (err) {
         setErrors(true)

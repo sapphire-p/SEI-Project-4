@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get('/api/plants')
+        const { data } = await axios.get('/api/plants/')
         setPlants(data)
       } catch (err) {
         setErrors(true)

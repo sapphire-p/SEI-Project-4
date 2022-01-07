@@ -12,6 +12,7 @@ python-dotenv = "*"
 djangorestframework = "*"
 pyjwt = "*"
 datetime = "*"
+django-on-heroku = "*"
 
 [dev-packages]
 
