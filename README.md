@@ -169,7 +169,7 @@ I used Cloudinary for image hosting for the app and used it to include an image 
 
 <img src="https://user-images.githubusercontent.com/84339614/148801225-52384534-cb54-49b7-b414-8ec867ca13d7.png" alt="Register with image upload" width="520"/>
 
-I made use of conditional rendering with ternary operators to ensure different features could be seen (or not) depending on pieces of state. This enabled me to provide different experiences of the app for authenticated vs non-authenticated users, display different data on the Profile page depending on whether it belongs to the user or not, and implement error handling and loading states.
+I made use of conditional rendering with ternary operators to ensure different features could be seen (or not) depending on pieces of state. This enabled me to provide different experiences of the app for authenticated vs non-authenticated users, display different data on the Profile page depending on whether it belongs to the user or not, and implement error handling and loading states. This code shows the use of a conditional render to display different items on the Navbar, according to whether the user is logged in or not:
 
 ![17_code_NavBar-conditional-render](https://user-images.githubusercontent.com/84339614/148801892-dda60690-6c9f-46a3-bcfd-ee4dbb156107.png)
 
