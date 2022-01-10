@@ -128,12 +128,12 @@ I also planned out the API requests that various React components on my front en
 I then created some wireframes to plan the user interface of the app and inform layouting and styling.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148799842-23f5e720-5b8f-49c9-b4fa-2aa92b2d8dca.png" height="310" alt="Wireframe Home">
-  <img src="https://user-images.githubusercontent.com/84339614/148799853-ee15cdc2-7888-4bd7-bfa7-e78045999bac.png" height="310" alt="Wireframe PlantShow">
+  <img src="https://user-images.githubusercontent.com/84339614/148799842-23f5e720-5b8f-49c9-b4fa-2aa92b2d8dca.png" height="210" alt="Wireframe Home">
+  <img src="https://user-images.githubusercontent.com/84339614/148799853-ee15cdc2-7888-4bd7-bfa7-e78045999bac.png" height="210" alt="Wireframe PlantShow">
 </p>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148799867-5db84084-aa5e-4222-a743-95636fa2deee.png" height="310" alt="Wireframe Community">
-  <img src="https://user-images.githubusercontent.com/84339614/148799877-2b068409-ccee-48bd-abf5-c70c36f67f95.png" height="310" alt="Wireframe Profile">
+  <img src="https://user-images.githubusercontent.com/84339614/148799867-5db84084-aa5e-4222-a743-95636fa2deee.png" height="210" alt="Wireframe Community">
+  <img src="https://user-images.githubusercontent.com/84339614/148799877-2b068409-ccee-48bd-abf5-c70c36f67f95.png" height="210" alt="Wireframe Profile">
 </p>
 
 ### Project Management
@@ -187,8 +187,8 @@ I made use of conditional rendering with ternary operators to ensure different f
 * **Image uploading** field on the Register form that recognises faces and formats the profile image to a set size and circular crop. I found Cloudinary a helpful tool and will use it in future for image hosting and uploading.
 * **Effective use of conditional rendering** through which I was able to ensure thorough error handling and loading states included across components, ensuring a positive and consistent user experience. I am confident in my use of conditional renders to account for different user behaviours as they interact with the app, and added helpful messages to improve the UX. Some examples of these messages shown below:
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148802431-cb27554e-3c97-4633-af60-cd1ee5d0a043.png" width="500" alt="Plant Show">
-  <img src="https://user-images.githubusercontent.com/84339614/148802420-7679bad7-4118-4b05-aa1b-560e5939c126.png" width="400" alt="Home page">
+  <img src="https://user-images.githubusercontent.com/84339614/148802431-cb27554e-3c97-4633-af60-cd1ee5d0a043.png" width="400" alt="Plant Show">
+  <img src="https://user-images.githubusercontent.com/84339614/148802420-7679bad7-4118-4b05-aa1b-560e5939c126.png" width="300" alt="Home page">
 </p>
 
 ## Future Improvements
