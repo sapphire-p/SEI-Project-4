@@ -2,6 +2,17 @@
 
 ## Contents
 * [Deployed Project Link](https://github.com/sapphire-p/SEI-Project-4#deployed-project-link)
+* [The Brief](https://github.com/sapphire-p/SEI-Project-4#the-brief)
+* [Overview & Concept](https://github.com/sapphire-p/SEI-Project-4#overview-&-concept)
+* [Code Installation](https://github.com/sapphire-p/SEI-Project-4#code-installation)
+* [Technologies & Tools Used](https://github.com/sapphire-p/SEI-Project-4#technologies-&-tools-used)
+* [Planning](https://github.com/sapphire-p/SEI-Project-4#planning)
+* [Development Process](https://github.com/sapphire-p/SEI-Project-4#tdevelopment-process)
+* [Challenges](https://github.com/sapphire-p/SEI-Project-4#challenges)
+* [Wins](https://github.com/sapphire-p/SEI-Project-4#wins)
+* [Future Improvements](https://github.com/sapphire-p/SEI-Project-4#future-improvements)
+* [Key Learnings](https://github.com/sapphire-p/SEI-Project-4#key-learnings)
+
 * The Brief
 * Overview & Concept
 * Code Installation
@@ -187,8 +198,8 @@ I made use of conditional rendering with ternary operators to ensure different f
 * **Image uploading** field on the Register form that recognises faces and formats the profile image to a set size and circular crop. I found Cloudinary a helpful tool and will use it in future for image hosting and uploading.
 * **Effective use of conditional rendering** through which I was able to ensure thorough error handling and loading states included across components, ensuring a positive and consistent user experience. I am confident in my use of conditional renders to account for different user behaviours as they interact with the app, and added helpful messages to improve the UX. Some examples of these messages shown below:
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148802431-cb27554e-3c97-4633-af60-cd1ee5d0a043.png" width="400" alt="Plant Show">
-  <img src="https://user-images.githubusercontent.com/84339614/148802420-7679bad7-4118-4b05-aa1b-560e5939c126.png" width="300" alt="Home page">
+  <img src="https://user-images.githubusercontent.com/84339614/148802431-cb27554e-3c97-4633-af60-cd1ee5d0a043.png" width="500" alt="Conditional render">
+  <img src="https://user-images.githubusercontent.com/84339614/148802420-7679bad7-4118-4b05-aa1b-560e5939c126.png" width="200" alt="Conditional render">
 </p>
 
 ## Future Improvements
