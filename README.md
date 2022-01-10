@@ -7,7 +7,7 @@
 * [Code Installation](https://github.com/sapphire-p/SEI-Project-4#code-installation)
 * [Technologies and Tools Used](https://github.com/sapphire-p/SEI-Project-4#technologies-and-tools-used)
 * [Planning](https://github.com/sapphire-p/SEI-Project-4#planning)
-* [Development Process](https://github.com/sapphire-p/SEI-Project-4#tdevelopment-process)
+* [Development Process](https://github.com/sapphire-p/SEI-Project-4#development-process)
 * [Challenges](https://github.com/sapphire-p/SEI-Project-4#challenges)
 * [Wins](https://github.com/sapphire-p/SEI-Project-4#wins)
 * [Future Improvements](https://github.com/sapphire-p/SEI-Project-4#future-improvements)
