@@ -12,16 +12,6 @@
 * [Wins](https://github.com/sapphire-p/SEI-Project-4#wins)
 * [Future Improvements](https://github.com/sapphire-p/SEI-Project-4#future-improvements)
 * [Key Learnings](https://github.com/sapphire-p/SEI-Project-4#key-learnings)
-* The Brief
-* Overview & Concept
-* Code Installation
-* Technologies & Tools Used
-* Planning
-* Development Process
-* Challenges
-* Wins
-* Future Improvements
-* Key Learnings
 
 ## Deployed Project Link
 
