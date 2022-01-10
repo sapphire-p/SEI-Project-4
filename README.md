@@ -3,9 +3,9 @@
 ## Contents
 * [Deployed Project Link](https://github.com/sapphire-p/SEI-Project-4#deployed-project-link)
 * [The Brief](https://github.com/sapphire-p/SEI-Project-4#the-brief)
-* [Overview & Concept](https://github.com/sapphire-p/SEI-Project-4#overview-&-concept)
+* [Overview and Concept](https://github.com/sapphire-p/SEI-Project-4#overview-and-concept)
 * [Code Installation](https://github.com/sapphire-p/SEI-Project-4#code-installation)
-* [Technologies & Tools Used](https://github.com/sapphire-p/SEI-Project-4#technologies-&-tools-used)
+* [Technologies and Tools Used](https://github.com/sapphire-p/SEI-Project-4#technologies-and-tools-used)
 * [Planning](https://github.com/sapphire-p/SEI-Project-4#planning)
 * [Development Process](https://github.com/sapphire-p/SEI-Project-4#tdevelopment-process)
 * [Challenges](https://github.com/sapphire-p/SEI-Project-4#challenges)
@@ -41,7 +41,7 @@ To access all features you can create an account by clicking Register, or feel f
 * **Deploy the project online** so it is accessible to the public
 * **Timeframe:** 8 days
 
-## Overview & Concept
+## Overview and Concept
 
 The Potting Shed is a full-stack application built using Python, Django and PostgreSQL on the back end, and React for the front end, simulating a store and social community built around pot plants. Users can browse plants, register to create a profile and login, add and delete reviews of plants, add plants to their profile and explore other users’ profiles.
 
@@ -74,7 +74,7 @@ The project can be viewed online [here](https://the-potting-shed.herokuapp.com/)
 * Install dependencies for front end: `yarn`
 * Start front end server: `yarn start` to view the app in your browser
 
-## Technologies & Tools Used
+## Technologies and Tools Used
 
 **Back end**
 
