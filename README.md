@@ -36,15 +36,15 @@ To access all features you can create an account by clicking Register, or feel f
 The Potting Shed is a full-stack application built using Python, Django and PostgreSQL on the back end, and React for the front end, simulating a store and social community built around pot plants. Users can browse plants, register to create a profile and login, add and delete reviews of plants, add plants to their profile and explore other users’ profiles.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148792590-7fbcfc04-705c-4e6a-a8f7-5399473d0b87.png" height="500" alt="Home page">
-  <img src="https://user-images.githubusercontent.com/84339614/148792667-3531209a-7b03-40a2-9a17-f1a60b037e43.png" height="500" alt="Plant Show">
+  <img src="https://user-images.githubusercontent.com/84339614/148792590-7fbcfc04-705c-4e6a-a8f7-5399473d0b87.png" height="400" alt="Home page">
+  <img src="https://user-images.githubusercontent.com/84339614/148792667-3531209a-7b03-40a2-9a17-f1a60b037e43.png" height="400" alt="Plant Show">
 </p>
 
 In this final solo project for my Software Engineering Immersive course, I developed my knowledge of SQL databases and relationships, realised a RESTful API with full CRUD functionality, implemented a custom user model and authentication, and challenged myself to learn and apply the React-Bootstrap framework.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/84339614/148798019-05bcc783-eaa6-4db8-8439-5beaf1f325cf.png" height="500" alt="MyProfile">
-  <img src="https://user-images.githubusercontent.com/84339614/148798025-48c17f88-fd9a-41af-9124-7e50dfadf432.png" height="500" alt="Community page">
+  <img src="https://user-images.githubusercontent.com/84339614/148798019-05bcc783-eaa6-4db8-8439-5beaf1f325cf.png" height="400" alt="MyProfile">
+  <img src="https://user-images.githubusercontent.com/84339614/148798025-48c17f88-fd9a-41af-9124-7e50dfadf432.png" height="400" alt="Community page">
 </p>
 
 ## Code Installation
@@ -168,8 +168,6 @@ I used Cloudinary for image hosting for the app and used it to include an image 
 ![15_Image-Upload-Field](https://user-images.githubusercontent.com/84339614/148801132-80a3171d-f1f1-4d86-99e5-6e66f62800fb.png)
 
 <img src="https://user-images.githubusercontent.com/84339614/148801225-52384534-cb54-49b7-b414-8ec867ca13d7.png" alt="Register with image upload" width="520"/>
-
-![16_Register-with-image-upload](https://user-images.githubusercontent.com/84339614/148801225-52384534-cb54-49b7-b414-8ec867ca13d7.png)
 
 I made use of conditional rendering with ternary operators to ensure different features could be seen (or not) depending on pieces of state. This enabled me to provide different experiences of the app for authenticated vs non-authenticated users, display different data on the Profile page depending on whether it belongs to the user or not, and implement error handling and loading states.
 
