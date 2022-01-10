@@ -165,9 +165,12 @@ From day four onwards I focused on the front end, where I used React Hooks to bu
 
 I used Cloudinary for image hosting for the app and used it to include an image upload field on the Register form, so users can add a profile picture. I was able to configure the uploader so that it recognises faces and formats the profile image to a set size and circular crop. To accommodate users that might not have a photo to upload, I had already established a neutral default profile image in the User model in the back end.
 
+<p align="center">
 ![15_Image-Upload-Field](https://user-images.githubusercontent.com/84339614/148801132-80a3171d-f1f1-4d86-99e5-6e66f62800fb.png)
-
+</p>
+<p align="center">
 <img src="https://user-images.githubusercontent.com/84339614/148801225-52384534-cb54-49b7-b414-8ec867ca13d7.png" alt="Register with image upload" width="520"/>
+</p>
 
 I made use of conditional rendering with ternary operators to ensure different features could be seen (or not) depending on pieces of state. This enabled me to provide different experiences of the app for authenticated vs non-authenticated users, display different data on the Profile page depending on whether it belongs to the user or not, and implement error handling and loading states.
 
