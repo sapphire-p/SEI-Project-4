@@ -87,7 +87,6 @@ The project can be viewed online [here](https://the-potting-shed.herokuapp.com/)
 * React-Bootstrap / Bootstrap
 * CSS
 * Nodemon
-* Http-proxy-middleware
 * ESLint (JavaScript linter)
 
 **Other technologies**
@@ -98,8 +97,6 @@ The project can be viewed online [here](https://the-potting-shed.herokuapp.com/)
 * Insomnia
 * TablePlus
 * Git / GitHub
-* Chrome DevTools
-* React Developer Tools
 * Heroku (deployment)
 * Cloudinary (image hosting and uploading)
 
